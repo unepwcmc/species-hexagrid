@@ -28,6 +28,7 @@ get '/species/:id' do
     CSV.foreach(fullname, headers: true) do |row|
       @rows << row
       species << row
+      puts row["redlist_status"]
     end
     Species.order_species(species)
   end
