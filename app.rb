@@ -15,6 +15,8 @@ get '/species/:id' do
   require 'aws-sdk-resources'
   require_relative 's3'
   require_relative 'file_manager'
+  require_relative 'species'
+  require 'byebug'
 
   filename = "test_#{params[:id]}.csv"
   @rows = []
@@ -22,9 +24,12 @@ get '/species/:id' do
   FileManager.with_file(filename) do
     S3.new.get_file(filename)
     fullname = "#{S3::BASE_PATH}#{filename}"
+    species = []
     CSV.foreach(fullname, headers: true) do |row|
       @rows << row
+      species << row
     end
+    Species.order_species(species)
   end
 
   erb :species

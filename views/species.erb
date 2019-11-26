@@ -7,6 +7,7 @@
     <body>
       <div class='test'>
         <% @rows.each do |row| %>
+          <% puts row.inspect %>
           <%= row %>
         <% end %>
       </div>
