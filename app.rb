@@ -25,11 +25,11 @@ get '/species/:id' do
   FileManager.with_file(filename) do
     S3.new.get_file(filename)
     fullname = "#{S3::BASE_PATH}#{filename}"
-    species = []
+    @species = []
     @cr = [], @en = [], @vu = []
     CSV.foreach(fullname, headers: true) do |row|
       @rows << row
-      species << row
+      @species << row
       puts row["redlist_status"]
       if row["redlist_status"] == "CR"
         @cr << row
@@ -39,8 +39,7 @@ get '/species/:id' do
         @vu << row
       end
     end
-    ordered_species = Species.order_species(species)
-    
+    ordered_species = Species.order_species(@species)
     byebug
   end
 

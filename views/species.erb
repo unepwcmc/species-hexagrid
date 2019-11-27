@@ -5,10 +5,9 @@
     <title>Species View</title>
   </head>
   <body>
-    <div class='test'>
       <div class="card--dataset-stats box box-padding box-margin-bottom flex flex-wrap">
         <div class="flex-s-whole flex-2-fiths card__column-left">
-        <img :src="/images/red-list.svg" :alt="redlist logo" class="card__logo">
+        <img src="/images/red-list.svg" alt="redlist logo" class="card__logo">
         <h2 class="heading--simple">
           <a href="http://www.iucnredlist.org/" title="Visit RedList" target="_blank">IUCN RedList</a>
         </h2>
@@ -16,7 +15,7 @@
         <p>This shows the number of species assessed on the IUCN Red List of Threatened Species that potentially occur within ??km of this site. </p>
 
         <div class="card__total-wrapper flex flex-column flex-center margin-center">
-          <span :class="card__total text-redlist">Dataset total</span>
+          <span :class="card__total text-redlist"><%= @species.count %></span>
           <span class="card__type">Dataset type</span>
         </div>
 
@@ -59,6 +58,5 @@
             </li>
         </ul>
       </div>
-    </div>
   </body>
 </html>

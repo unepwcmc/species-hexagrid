@@ -1,0 +1,382 @@
+//--------------------------------------------------
+// card wrapper
+//--------------------------------------------------
+.card-wrapper {
+
+//--------------------------------------------------
+// card wrapper - facts
+//--------------------------------------------------
+  &--facts {
+    flex-direction: column;
+
+    @include breakpoint($small) { flex-direction: row; }
+  }
+}
+
+//--------------------------------------------------
+// card
+//--------------------------------------------------
+.card {
+
+//--------------------------------------------------
+// card - basic
+//--------------------------------------------------
+  &--basic {
+    .card {
+      &__image {
+        background-position: center;
+        background-size: cover;
+        height: rem-calc(250);
+
+        @include breakpoint($small) { height: auto; }
+      }
+
+      &__content {
+        padding: rem-calc(20) $gutter-small;
+        @include breakpoint($small) { padding: rem-calc(30); }
+        @include breakpoint($medium) { padding: rem-calc(40); }
+      }
+    }
+  }
+
+//--------------------------------------------------
+// card - benefits
+//--------------------------------------------------
+  &--benefit {
+    margin-bottom: rem-calc(40);
+    padding: 0 15%;
+
+    @include breakpoint ($small) {
+      flex-basis: 33.3%;
+      margin-bottom: rem-calc(80);
+      padding: 0 5%;
+    }
+
+    h3 { margin-top: 0; }
+
+    .card {
+      &__content {
+        font-size: rem-calc(14);
+      }
+
+      &__icon {
+        font-size: rem-calc(80);
+      }
+
+      &__title {
+        font-size: rem-calc(20); 
+      }
+    }
+  }
+
+//--------------------------------------------------
+// card - our data
+//--------------------------------------------------
+  &--our-data {
+    .card {
+      &__image {
+        margin: rem-calc(20) auto rem-calc(14) auto;
+
+        @include breakpoint($small) { margin: rem-calc(30) auto rem-calc(20) auto; }
+      }
+    }
+  }
+
+//--------------------------------------------------    
+// card - dataset 
+//--------------------------------------------------
+  &--dataset {
+    background-color: $white;
+    font-size: rem-calc(14);
+    font-weight: $light;  
+    padding: rem-calc(20 26 28 26);
+    width: 32%;
+    
+     .card { 
+      &__content { 
+        color: $grey; 
+        margin-bottom: rem-calc(100); 
+      }
+      
+         &__button { display: flex; } 
+    }    
+  }
+
+//--------------------------------------------------
+// card - dataset stats
+//--------------------------------------------------
+  &--dataset-stats {
+    h2 { 
+      margin-top: rem-calc(8); 
+
+      a { color: inherit; }
+    }
+    
+    .card {
+      &__column-left {
+        @include breakpoint($small) { padding-right: rem-calc(30); }
+        @include breakpoint($medium) { padding-right: rem-calc(50); }
+      }
+
+        &__logo {
+          width: auto; height: rem-calc(40);
+        }
+
+        &__buffer {
+          font-size: rem-calc(18);
+        }
+
+        &__total-wrapper {
+          background-color: white;
+          border: solid 1px $grey;
+          margin-top: rem-calc(22);
+          width: 94%; height: rem-calc(110);
+
+          @include breakpoint($medium) { 
+            font-size: rem-calc(100); 
+            width: rem-calc(300); height: rem-calc(160);
+          }
+        }
+        
+          &__total {
+            font-size: rem-calc(60);
+            font-weight: bold;
+            line-height: 1;
+
+            @include breakpoint($medium) { font-size: rem-calc(100); }
+          }
+
+          &__type {
+            font-size: rem-calc(14);
+
+            @include breakpoint($medium) { font-size: rem-calc(20); }
+          }
+
+        &__smallprint { 
+          font-size: rem-calc(14); 
+          margin-top: rem-calc(18);
+
+          &-line { display: block; }
+        }
+
+      &__list {
+        font-size: rem-calc(16);
+        width: 100%;
+
+        @include breakpoint($small) { font-size: rem-calc(18); }
+
+      }
+
+        &__list-li {
+          border-bottom: solid 1px $grey;
+          margin: 0;
+
+          &:last-child {
+
+            @include breakpoint-down($small) { border-bottom: none; }
+          }
+        }
+
+          &__list-p {
+            height: rem-calc(50);
+
+            @include breakpoint($small) { height: rem-calc(58); }
+          }
+
+            &__list-total { 
+              margin-right: rem-calc(10); 
+              width: rem-calc(42);
+
+              @include breakpoint($small) { margin-right: rem-calc(14); }
+            }
+
+            &__list-icon { 
+              margin-right: rem-calc(14); 
+              display: inline-flex; 
+
+              @include breakpoint($medium) { margin-right: rem-calc(24); }
+            }
+
+            &__list-icon-grey { background-color: $grey; }
+    }
+  }
+
+//--------------------------------------------------
+// card - facts
+//--------------------------------------------------
+  &--fact {
+    overflow: hidden;
+    padding-bottom: rem-calc(18);
+    width: 100%; 
+
+    @include breakpoint ($small) { padding: 0; }
+
+    .card {
+      &__content {
+        margin: 0 auto;
+        padding: rem-calc(0 23);
+        width: rem-calc(200); height: rem-calc(200);
+
+        position: relative;
+
+        
+        &:after{
+          border-radius:100%;
+          box-shadow: 0px 0px 0px 300px $grey;
+          content:'';
+          width: 100%; height: 100%;
+          
+
+          position:absolute;
+          top: 0;
+          left: 0;
+        }
+      } 
+
+        &__icon {
+          font-size: rem-calc(80);
+
+          position:absolute;
+          top: 0;
+          left: 50%;
+
+          transform: translateX(-50%);
+        }
+
+        &__total {
+          font-size: rem-calc(36);
+          margin-top: 54%;
+        }
+
+        &__text {
+          font-size: rem-calc(18);
+        }
+    }
+  }
+
+//--------------------------------------------------
+// card - portfolio
+//--------------------------------------------------
+  &--portfolio {
+    padding: rem-calc(20 0 50 0); 
+
+    .card {
+      &__content-wrapper { //ie11 fix
+        flex: 100%;
+        
+        @include breakpoint($small) { flex: 0 1 50%; }
+
+        &--left {
+          @include breakpoint($small) { order: -1; }
+        }
+      }
+        &__content {
+          padding: rem-calc(14 0 20 0);
+
+          @include breakpoint($small) { padding: rem-calc(30 40); }
+          @include breakpoint($medium) { padding: rem-calc(50 80); }
+        }
+
+      &__image-wrapper {
+        flex: 100%;
+        text-align: center;
+
+        @include breakpoint($small) { 
+          flex: 0 1 50%;
+        }
+      }
+
+        &__image {
+          width: 80%;
+
+          @include breakpoint($small) { width: 100%; }
+        }
+    }
+  }
+
+//--------------------------------------------------
+// card - team
+//--------------------------------------------------
+  &--team {
+    flex: 0 1 100%;
+    padding: rem-calc(10 0);
+
+    @include breakpoint($small) { 
+      flex: 0 1 33.3%; 
+      padding: rem-calc(10);
+    }
+
+    @include breakpoint($medium) { flex: 0 1 25%; }
+
+    &-wrapper {
+      @extend .gutters;
+
+      @include breakpoint($large) { 
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .card {
+      &__image {
+        background-color: $grey-light;
+        background-size: cover;
+        background-position: center;
+        width: auto; height: rem-calc(272);
+      }
+
+      &__content {
+        background-color: $grey;
+        border-top: solid rem-calc(10);
+        color: $white;  
+        padding: rem-calc(18 24);
+        width: auto; height: rem-calc(140);
+
+        &--blue { border-color: $marketing-blue; }
+        &--green { border-color: $marketing-green; }
+        &--purple { border-color: $marketing-purple; }
+        &--red { border-color: $marketing-red; }
+        &--yellow { border-color: $marketing-yellow; }
+      }
+
+        &__name { margin-bottom: rem-calc(4); }
+    }
+  }
+
+//--------------------------------------------------
+// card - testimonials
+//--------------------------------------------------
+  &--testimonial {
+    padding: rem-calc(30);
+
+    .card {
+      &__quote {
+        font-size: rem-calc(16);
+      }
+
+      &__logo {
+        width: rem-calc(50); height: rem-calc(50);
+      }
+    }
+  }
+
+//--------------------------------------------------
+// card - tutorials
+//--------------------------------------------------
+
+  &--tutorial {
+    position: relative;
+    background-color: $grey;
+    margin-top: rem-calc(14);
+    margin-bottom: rem-calc(14);
+    min-width: rem-calc(150);
+    font-size: rem-calc(18);
+    text-align: left;
+    cursor: pointer;
+
+    a {
+      color: $grey-light;
+      text-decoration: none;
+    }
+  }
+}
