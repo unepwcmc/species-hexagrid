@@ -5,6 +5,8 @@ require 'sinatra'
 require 'json'
 require 'dotenv/load'
 
+require 'byebug'
+
 get '/' do
   #"Hello world! Version 3. Now with test-suite! </br>"
   erb :index
@@ -16,7 +18,6 @@ get '/species/:id' do
   require_relative 's3'
   require_relative 'file_manager'
   require_relative 'species'
-  require 'byebug'
 
   filename = "test_#{params[:id]}.csv"
   @rows = []
@@ -25,14 +26,23 @@ get '/species/:id' do
     S3.new.get_file(filename)
     fullname = "#{S3::BASE_PATH}#{filename}"
     species = []
+    @cr = [], @en = [], @vu = []
     CSV.foreach(fullname, headers: true) do |row|
       @rows << row
       species << row
       puts row["redlist_status"]
+      if row["redlist_status"] == "CR"
+        @cr << row
+      elsif row["redlist_status"] == "EN"
+        @en << row
+      elsif row["redlist_status"] == "VU"
+        @vu << row
+      end
     end
-    Species.order_species(species)
+    ordered_species = Species.order_species(species)
+    
+    byebug
   end
 
   erb :species
 end
-

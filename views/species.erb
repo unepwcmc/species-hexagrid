@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <link rel="stylesheet" type="text/css" href="/stylesheets/sass/style.css" />
-      <title>Species View</title>
-    </head>
-    <body>
-      <div class='test'>
-        <% @rows.each do |row| %>
-          <% puts row.inspect %>
-          <%= row %>
-        <% end %>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/sass/style.css" />
+    <title>Species View</title>
+  </head>
+  <body>
+    <div class='test'>
+      <div class="card--dataset-stats box box-padding box-margin-bottom flex flex-wrap">
+        <div class="flex-s-whole flex-2-fiths card__column-left">
+        <img :src="/images/red-list.svg" :alt="`${dataset.title} logo`" class="card__logo">
+        <h2 class="heading--simple">
+          <a :href="http://www.iucnredlist.org/" :title="`Visit RedList`" target="_blank">Visit RedList</a>
+        </h2>
+        <p class="card__buffer light">??km</p>
+        <p>This shows the number of species assessed on the IUCN Red List of Threatened Species that potentially occur within 50km of this site. </p>
+
+        <div class="card__total-wrapper flex flex-column flex-center margin-center">
+          <span :class="`card__total text-${dataset.theme}`">Dataset total</span>
+          <span class="card__type">Dataset type</span>
+        </div>
+
+        <p class="card__smallprint">
+          <span class="card__smallprint-line">line</span>
+        </p>
       </div>
-    </body>
+
+      <div class="flex-s-whole flex-3-fiths flex flex-v-center">
+        <ul class="ul-unstyled card__list">
+            <li v-for="row in dataset.list" class="card__list-li">
+              <p class="card__list-p no-margin flex flex-v-center">
+                <span class="card__list-total bold">4</span>
+
+                <i class="card__list-icon icon--redlist-medium">CR</i>
+
+                <span class="card__list-title light">Critically Endangered</span>
+
+                <tooltip class="margin-space-left" :text="row.description">
+                  <i class="icon-question-mark icon--tooltip"></i>
+                </tooltip>
+              </p>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </body>
 </html>
