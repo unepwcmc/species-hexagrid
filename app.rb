@@ -39,7 +39,7 @@ get '/species/:id' do
         @vu << row
       end
     end
-    ordered_species = Species.order_species(@species)
+    @redlist_threatened = Species.order_species(@species)
     byebug
   end
 
