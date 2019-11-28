@@ -1,5 +1,3 @@
-require 'byebug'
-
 module Species
   extend self
 

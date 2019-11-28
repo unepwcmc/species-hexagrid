@@ -5,8 +5,6 @@ require 'sinatra'
 require 'json'
 require 'dotenv/load'
 
-require 'byebug'
-
 get '/' do
   #"Hello world! Version 3. Now with test-suite! </br>"
   erb :index
