@@ -30,6 +30,7 @@ get '/species/:id' do
     @redlist_threatened = Species.order_species(@species)
     @total_count = @species.count
     @species = @species.group_by { |hash| hash['redlist_status'] }
+    @area = 50
   end
 
   erb :species
