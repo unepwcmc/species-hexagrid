@@ -28,7 +28,7 @@
         <ul class="ul-unstyled card__list">
             <li class="card__list-li">
               <p class="card__list-p no-margin flex flex-v-center">
-                <span class="card__list-total bold"><%= @cr.count %></span>
+                <span class="card__list-total bold"><%= @species['CR']&.count || 0 %></span>
                 <i class="card__list-icon icon--redlist-medium">CR</i>
                 <span class="card__list-title light">Critically Endangered</span>
                 <tooltip class="margin-space-left" text="row.description">
@@ -38,7 +38,7 @@
             </li>
             <li class="card__list-li">
               <p class="card__list-p no-margin flex flex-v-center">
-                <span class="card__list-total bold"><%= @en.count %></span>
+                <span class="card__list-total bold"><%= @species['EN']&.count || 0 %></span>
                 <i class="card__list-icon icon--redlist-medium">EN</i>
                 <span class="card__list-title light">Endangered</span>
                 <tooltip class="margin-space-left" text="row.description">
@@ -48,7 +48,7 @@
             </li>
             <li class="card__list-li">
               <p class="card__list-p no-margin flex flex-v-center">
-                <span class="card__list-total bold"><%= @vu.count %></span>
+                <span class="card__list-total bold"><%= @species['VU']&.count || 0 %></span>
                 <i class="card__list-icon icon--redlist-medium">VU</i>
                 <span class="card__list-title light">Vulnerable</span>
                 <tooltip class="margin-space-left" text="row.description">
@@ -62,7 +62,7 @@
       <div class="report__page-break"></div>
       <section class="report__content">
         <h3>IUCN Red List of Threatened Species - CR</h3>
-        <% if @cr&.any? %>
+        <% if @species['CR']&.any? %>
         <p>The following species are potentially found within ??km of the area of interest.</p>
           <table class="report__table">
             <thead class="bg-red">
@@ -75,7 +75,7 @@
             </thead>
 
             <tbody>
-              <% @cr.each do |row| %>
+              <% @species['CR'].each do |row| %>
                 <tr>
                   <td><%= row["scientific_name"] %></td>
                   <td><%= row["common_name"] %></td>
@@ -91,7 +91,7 @@
       </section>
       <section class="report__content">
       <h3>IUCN Red List of Threatened Species - EN</h3>
-      <% if @en&.any? %>
+      <% if @species['EN']&.any? %>
       <p>The following species are potentially found within ??km of the area of interest.</p>
 
         <table class="report__table">
@@ -105,7 +105,7 @@
           </thead>
 
           <tbody>
-            <% @en.each do |row| %>
+            <% @species['EN'].each do |row| %>
               <tr>
                 <td><%= row["scientific_name"] %></td>
                 <td><%= row["common_name"] %></td>
@@ -121,7 +121,7 @@
     </section>
     <section class="report__content">
     <h3>IUCN Red List of Threatened Species - VU</h3>
-    <% if @vu&.any? %>
+    <% if @species['VU']&.any? %>
     <p>The following species are potentially found within ??km of the area of interest.</p>
 
       <table class="report__table">

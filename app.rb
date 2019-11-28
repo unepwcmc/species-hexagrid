@@ -26,21 +26,11 @@ get '/species/:id' do
     S3.new.get_file(filename)
     fullname = "#{S3::BASE_PATH}#{filename}"
     @species = []
-    @cr = []
-    @en = []
-    @vu = []
     CSV.foreach(fullname, headers: true) do |row|
-      @rows << row
       @species << row
-      if row["redlist_status"] == "CR"
-        @cr << row
-      elsif row["redlist_status"] == "EN"
-        @en << row
-      elsif row["redlist_status"] == "VU"
-        @vu << row
-      end
     end
     @redlist_threatened = Species.order_species(@species)
+    @species = @species.group_by { |hash| hash['redlist_status'] }
   end
 
   erb :species
