@@ -2445,8 +2445,8 @@ div.pie-chart-wrapper {
   height: 16px;
   background-color: #379CD7; }
 .icon--redlist, .icon--redlist-medium, .icon--redlist-small {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: #D82007;
   border-top-right-radius: 0;
   position: relative;
