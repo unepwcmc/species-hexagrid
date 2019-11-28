@@ -32,7 +32,6 @@ get '/species/:id' do
     CSV.foreach(fullname, headers: true) do |row|
       @rows << row
       @species << row
-      puts row["redlist_status"]
       if row["redlist_status"] == "CR"
         @cr << row
       elsif row["redlist_status"] == "EN"
