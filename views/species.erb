@@ -57,8 +57,10 @@
               </p>
             </li>
         </ul>
+        </div>
       </div>
-      <div>
+      <div class="report__page-break"></div>
+      <section class="report__content">
         <h3>Priority Species</h3>
 
         <p>Habitat of significant importance to priority species will trigger critical habitat status (See PS6: para 16). IBAT provides a preliminary list of priority species that could occur within the 50km buffer. This list is drawn from the IUCN Red List of Threatened Species (IUCN RL). This list should be used to guide any further assessment, with the aim of confirming knownor likely occurrence of these species within the project area. It is also possible that further assessment may confirm occurrence of additional priority species not listed here. It is strongly encouraged that any new species information collected by the project be shared with species experts and/or IUCN wherever possible in order to improve IUCN datasets.</p>
@@ -73,7 +75,7 @@
                 <th>Species name</th>
                 <th>Common name</th>
                 <th>IUCN Category</th>
-                <th>Group</th>
+                <th>Link to IUCN Red List</th>
               </tr>
             </thead>
 
@@ -83,7 +85,7 @@
                   <td><%= row["scientific_name"] %></td>
                   <td><%= row["common_name"] %></td>
                   <td><%= row["redlist_status"] %></td>
-                  <td><%= row["group"] %></td>
+                  <td><a href=<%= row["iucn_redlist_url"] %>>Link</a></td>
                 </tr>
               <% end %>
             </tbody>
@@ -91,6 +93,6 @@
         <% else %>
           <p>There are no CR or EN species to show for this report.</p>
         <% end %>
-      </div>
+      </section>
   </body>
 </html>
