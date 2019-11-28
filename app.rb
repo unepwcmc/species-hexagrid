@@ -26,7 +26,9 @@ get '/species/:id' do
     S3.new.get_file(filename)
     fullname = "#{S3::BASE_PATH}#{filename}"
     @species = []
-    @cr = [], @en = [], @vu = []
+    @cr = []
+    @en = []
+    @vu = []
     CSV.foreach(fullname, headers: true) do |row|
       @rows << row
       @species << row
@@ -40,7 +42,6 @@ get '/species/:id' do
       end
     end
     @redlist_threatened = Species.order_species(@species)
-    byebug
   end
 
   erb :species
