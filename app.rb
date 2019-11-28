@@ -30,6 +30,7 @@ get '/species/:id' do
       @species << row
     end
     @redlist_threatened = Species.order_species(@species)
+    @total_count = @species.count
     @species = @species.group_by { |hash| hash['redlist_status'] }
   end
 
