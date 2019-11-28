@@ -1,0 +1,29 @@
+//--------------------------------------------------
+// tables
+//--------------------------------------------------
+.table {
+
+//--------------------------------------------------
+// table - payg
+//--------------------------------------------------
+  &--payg {
+    .table {
+      &__column {
+        &-left { 
+          @include breakpoint($small) { padding-right: rem-calc(10); }
+        }
+
+        &-right { 
+          @include breakpoint($small) { padding-left: rem-calc(10); }
+        }
+      }
+
+        &__row {
+          background-color: $white;
+          font-weight: $light;
+          margin-bottom: rem-calc(10);
+          padding: rem-calc(6 10);
+        }
+    }   
+  }
+}
