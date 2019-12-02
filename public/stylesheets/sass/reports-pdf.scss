@@ -14,15 +14,8 @@
 @import './utilities/variables.scss';
 
 $blue-light: #D1DADF;
-$blue: #379CD7;
-$dark-blue: #073466;
-$green: #78A04C;
 $grey-xlight: #e7e7e7;
-$orange: #ff9900;
-$peach: #F4E1CD;
-$purple: #684B99;
 $red: #DD2E26;
-$yellow: #F5C13F;
 
 //--------------------------------------------------
 // mixins
@@ -103,14 +96,6 @@ a { color: black; }
 }
 
 //--------------------------------------------------
-// charts
-//--------------------------------------------------
-div.pie-chart-wrapper {
-  // margin-top: rem-calc(8);
-  width: 45%;
-}
-
-//--------------------------------------------------
 // icons
 //--------------------------------------------------
 %icon {
@@ -122,25 +107,9 @@ div.pie-chart-wrapper {
 }
 
 .icon {
-  &--low {
-    @extend %icon;
-    background-color: $yellow;
-  }
-  
-  &--medium {
-    @extend %icon;
-    background-color: $orange;
-  }
-  
   &--high {
     @extend %icon;
     background-color: $red;
-  }
-  
-  &--wdpa {
-    @extend %icon;
-    width: 16px; height: 16px;
-    background-color: $green;
   }
 
   &--kba {
@@ -186,15 +155,6 @@ div.pie-chart-wrapper {
   &__page-break {
     page-break-after: always;
     page-break-inside: avoid;
-  }
-
-  &__content {
-    margin: 0 60px;
-
-    span.critical { color: $purple; }
-    span.high { color: $red; }
-    span.medium { color: $yellow; }
-    span.low { color: $green; }
   }
 
   &__multisite {
@@ -262,33 +222,6 @@ div.pie-chart-wrapper {
       z-index: 1;
     }
 
-  &__legend {
-    &--upstream {
-      @include freshwater-colour($freshwater-upstream);
-    }
-
-    &--downstream {
-      @include freshwater-colour($freshwater-downstream);
-      margin-right: 20px;
-    }
-
-    &-item {
-      font-weight: 400;
-      margin: 6px 0;
-    }
-
-      &-key {
-        margin-right: 8px;
-        width: 32px; height: 22px;
-
-        display: inline-block;
-      }
-
-      &-label {
-
-      }
-  }
-
   &__table {
     border-collapse: collapse;
     width: 100%;
@@ -326,20 +259,11 @@ div.pie-chart-wrapper {
 // helpers
 //--------------------------------------------------
 .black { color: $black; }
-.green { color: $green; }
-.purple { color: $purple; }
 .red { color: $red; }
-.yellow { color: $yellow; }
-.bg-blue { background-color: $blue; }
-.bg-blue-light { background-color: $blue-light; }
-.bg-green { background-color: $green; }
 .bg-grey { background-color: $grey; }
 .bg-grey-light { background-color: $grey-light; }
 .bg-grey-xlight { background-color: $grey-xlight; }
-.bg-peach { background-color: $peach; }
-.bg-purple { background-color: $purple; }
 .bg-red { background-color: $red; }
-.bg-dark-blue { background-color: $dark-blue; }
 
 .center { text-align: center; }
 
