@@ -50,20 +50,11 @@ strong, .bolder { font-weight: $bolder; }
 }
 
 .text-blue { color: $blue; }
-.text-green { color: $green; }
 .text-grey { color: $grey; }
 .text-red { color: $red; }
 .text-iucn { color: $iucn; }
 .text-white { color: $white; }
-.text-marketing-green { color: $marketing-green; }
-.text-marketing-teal { color: $marketing-teal; }
-.text-marketing-blue { color: $marketing-blue; }
-.text-marketing-purple { color: $marketing-purple; }
-.text-marketing-pink { color: $marketing-pink; }
 .text-marketing-red { color: $marketing-red; }
-.text-marketing-orange { color: $marketing-orange; }
-.text-marketing-yellow { color: $marketing-yellow; }
-
 .text-marketing-date { font-size: rem-calc(30); }
 
 .text-anchor { 
@@ -192,20 +183,8 @@ strong, .bolder { font-weight: $bolder; }
 .bg-grey { background-color: $grey; }
 .bg-grey-dark { background-color: $grey-dark; }
 .bg-grey-xdark { background-color: $grey-xdark; }
-.bg-marketing-green { background-color: $marketing-green; }
-.bg-marketing-teal { background-color: $marketing-teal; }
-.bg-marketing-blue { background-color: $marketing-blue; }
-.bg-marketing-purple { background-color: $marketing-purple; }
-.bg-marketing-pink { background-color: $marketing-pink; }
 .bg-marketing-red { background-color: $marketing-red; }
-.bg-marketing-orange { background-color: $marketing-orange; }
-.bg-marketing-yellow { background-color: $marketing-yellow; }
-.bg-marketing-blue-light { background-color: lighten($marketing-blue, 30%); }
-.bg-marketing-green-light { background-color: lighten($marketing-green, 30%); }
-.bg-marketing-purple-light { background-color: lighten($marketing-purple, 30%); }
 .bg-marketing-red-light { background-color: lighten($marketing-red, 30%); }
-.bg-marketing-yellow-light { background-color: lighten($marketing-yellow, 30%); }
-.bg-rainbow { background: linear-gradient(90deg, $marketing-green 0%, $marketing-teal 14.29%, $marketing-blue 28.57%, $marketing-purple 42.86%, $marketing-pink 57.14%, $marketing-red 71.43%, $marketing-orange 84.71%, $marketing-yellow 100%); }
 
 .bg-image-overlay {
   position: relative;

@@ -657,9 +657,6 @@ strong, .bolder {
 .text-blue {
   color: #4673CE; }
 
-.text-green {
-  color: #7CA040; }
-
 .text-grey {
   color: #424242; }
 
@@ -672,29 +669,8 @@ strong, .bolder {
 .text-white {
   color: #ffffff; }
 
-.text-marketing-green {
-  color: #35b7a6; }
-
-.text-marketing-teal {
-  color: #40a0be; }
-
-.text-marketing-blue {
-  color: #5680d2; }
-
-.text-marketing-purple {
-  color: #8380cf; }
-
-.text-marketing-pink {
-  color: #b570c3; }
-
 .text-marketing-red {
   color: #dd6280; }
-
-.text-marketing-orange {
-  color: #e46851; }
-
-.text-marketing-yellow {
-  color: #efb856; }
 
 .text-marketing-date {
   font-size: 1.875rem; }
@@ -848,47 +824,11 @@ strong, .bolder {
 .bg-grey-xdark {
   background-color: #242424; }
 
-.bg-marketing-green {
-  background-color: #35b7a6; }
-
-.bg-marketing-teal {
-  background-color: #40a0be; }
-
-.bg-marketing-blue {
-  background-color: #5680d2; }
-
-.bg-marketing-purple {
-  background-color: #8380cf; }
-
-.bg-marketing-pink {
-  background-color: #b570c3; }
-
 .bg-marketing-red {
   background-color: #dd6280; }
 
-.bg-marketing-orange {
-  background-color: #e46851; }
-
-.bg-marketing-yellow {
-  background-color: #efb856; }
-
-.bg-marketing-blue-light {
-  background-color: #cfdbf2; }
-
-.bg-marketing-green-light {
-  background-color: #a1e4db; }
-
-.bg-marketing-purple-light {
-  background-color: #efeff9; }
-
 .bg-marketing-red-light {
   background-color: #f8e0e6; }
-
-.bg-marketing-yellow-light {
-  background-color: #fcf3e2; }
-
-.bg-rainbow {
-  background: linear-gradient(90deg, #35b7a6 0%, #40a0be 14.29%, #5680d2 28.57%, #8380cf 42.86%, #b570c3 57.14%, #dd6280 71.43%, #e46851 84.71%, #efb856 100%); }
 
 .bg-image-overlay {
   position: relative;
@@ -1264,16 +1204,8 @@ strong, .bolder {
     padding: 1.125rem 1.5rem;
     width: auto;
     height: 8.75rem; }
-    .card--team .card__content--blue {
-      border-color: #5680d2; }
-    .card--team .card__content--green {
-      border-color: #35b7a6; }
-    .card--team .card__content--purple {
-      border-color: #8380cf; }
     .card--team .card__content--red {
       border-color: #dd6280; }
-    .card--team .card__content--yellow {
-      border-color: #efb856; }
   .card--team .card__name {
     margin-bottom: 0.25rem; }
 .card--testimonial {
@@ -2119,9 +2051,6 @@ strong, .bolder {
 .text-blue {
   color: #4673CE; }
 
-.text-green {
-  color: #7CA040; }
-
 .text-grey {
   color: #424242; }
 
@@ -2134,29 +2063,8 @@ strong, .bolder {
 .text-white {
   color: #ffffff; }
 
-.text-marketing-green {
-  color: #35b7a6; }
-
-.text-marketing-teal {
-  color: #40a0be; }
-
-.text-marketing-blue {
-  color: #5680d2; }
-
-.text-marketing-purple {
-  color: #8380cf; }
-
-.text-marketing-pink {
-  color: #b570c3; }
-
 .text-marketing-red {
   color: #dd6280; }
-
-.text-marketing-orange {
-  color: #e46851; }
-
-.text-marketing-yellow {
-  color: #efb856; }
 
 .text-marketing-date {
   font-size: 1.875rem; }
@@ -2310,47 +2218,11 @@ strong, .bolder {
 .bg-grey-xdark {
   background-color: #242424; }
 
-.bg-marketing-green {
-  background-color: #35b7a6; }
-
-.bg-marketing-teal {
-  background-color: #40a0be; }
-
-.bg-marketing-blue {
-  background-color: #5680d2; }
-
-.bg-marketing-purple {
-  background-color: #8380cf; }
-
-.bg-marketing-pink {
-  background-color: #b570c3; }
-
 .bg-marketing-red {
   background-color: #dd6280; }
 
-.bg-marketing-orange {
-  background-color: #e46851; }
-
-.bg-marketing-yellow {
-  background-color: #efb856; }
-
-.bg-marketing-blue-light {
-  background-color: #cfdbf2; }
-
-.bg-marketing-green-light {
-  background-color: #a1e4db; }
-
-.bg-marketing-purple-light {
-  background-color: #efeff9; }
-
 .bg-marketing-red-light {
   background-color: #f8e0e6; }
-
-.bg-marketing-yellow-light {
-  background-color: #fcf3e2; }
-
-.bg-rainbow {
-  background: linear-gradient(90deg, #35b7a6 0%, #40a0be 14.29%, #5680d2 28.57%, #8380cf 42.86%, #b570c3 57.14%, #dd6280 71.43%, #e46851 84.71%, #efb856 100%); }
 
 .bg-image-overlay {
   position: relative;

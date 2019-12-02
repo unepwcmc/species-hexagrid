@@ -332,11 +332,7 @@
         padding: rem-calc(18 24);
         width: auto; height: rem-calc(140);
 
-        &--blue { border-color: $marketing-blue; }
-        &--green { border-color: $marketing-green; }
-        &--purple { border-color: $marketing-purple; }
         &--red { border-color: $marketing-red; }
-        &--yellow { border-color: $marketing-yellow; }
       }
 
         &__name { margin-bottom: rem-calc(4); }
