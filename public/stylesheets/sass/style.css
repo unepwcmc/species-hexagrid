@@ -654,9 +654,6 @@ strong, .bolder {
 .column-title {
   max-width: 6.5625rem; }
 
-.text-blue {
-  color: #4673CE; }
-
 .text-grey {
   color: #424242; }
 
@@ -802,9 +799,6 @@ strong, .bolder {
 
 .padding-space-right {
   padding-right: 0.875rem; }
-
-.bg-blue-map {
-  background-color: #82B5E1; }
 
 .bg-red-light {
   background-color: #f2dede; }
@@ -2048,9 +2042,6 @@ strong, .bolder {
 .column-title {
   max-width: 6.5625rem; }
 
-.text-blue {
-  color: #4673CE; }
-
 .text-grey {
   color: #424242; }
 
@@ -2197,9 +2188,6 @@ strong, .bolder {
 .padding-space-right {
   padding-right: 0.875rem; }
 
-.bg-blue-map {
-  background-color: #82B5E1; }
-
 .bg-red-light {
   background-color: #f2dede; }
 
@@ -2292,7 +2280,7 @@ a {
   .box--small p {
     margin: 0 0 3px 0; }
 
-.icon--high, .icon--kba, .icon--redlist, .icon--redlist-medium, .icon--redlist-small, .icon--grey {
+.icon--high, .icon--redlist, .icon--redlist-medium, .icon--redlist-small, .icon--grey {
   border-radius: 100%;
   margin-right: 8px;
   width: 24px;
@@ -2301,10 +2289,6 @@ a {
 
 .icon--high {
   background-color: #DD2E26; }
-.icon--kba {
-  width: 16px;
-  height: 16px;
-  background-color: #4673CE; }
 .icon--redlist, .icon--redlist-medium, .icon--redlist-small {
   width: 30px;
   height: 30px;
