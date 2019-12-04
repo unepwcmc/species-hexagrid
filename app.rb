@@ -41,8 +41,9 @@ get '/species/:id' do
 
     # Callback for every event that arrives
     stream.on_event do |event|
+       next if event.nil?
        puts event.event_type
-       puts event.payload.read unless event.nil?
+       puts event.payload.read unless (event.event_type == :stats || event.event_type == :end)
     end
   end
 
