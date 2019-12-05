@@ -4,7 +4,7 @@ class S3
   def initialize
     @s3 = Aws::S3::Client.new(region: ENV['AWS_REGION'])
     @keys = ['scientific_name','common_name','redlist_status','iucn_redlist_url']
-    @data = {}
+    @species = []
   end
 
   def get_file(filename)
@@ -27,12 +27,13 @@ class S3
 
     @s3.select_object_content(params) do |stream|
 
-      # Callback for every event that arrives
+      # callback for every event that arrives
       stream.on_event do |event|
-        puts CSV.parse(event.payload.read).map {|a| Hash[ @keys.zip(a) ] } unless (event.event_type == :stats || event.event_type == :end)
+        # only populate for the situation where we don't have :stats or :end
+        @species = CSV.parse(event.payload.read).map {|a| Hash[ @keys.zip(a) ] } unless (event.event_type == :stats || event.event_type == :end)
       end
-      @data
     end
+    @species
   end
 
   private
