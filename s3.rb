@@ -31,6 +31,9 @@ class S3
       # callback for every event that arrives
       stream.on_event do |event|
         # only populate for the situation where we don't have :stats or :end
+        # :stats has statistical information about the data transferred such as:
+        # => Aws::S3::Types::Stats bytes_scanned=xx, bytes_processed=xx, bytes_returned=xx
+        # :end indicates the end of the event
         @species = CSV.parse(event.payload.read).map {|a| Hash[ @keys.zip(a) ] } unless (event.event_type == :stats || event.event_type == :end)
       end
     end
