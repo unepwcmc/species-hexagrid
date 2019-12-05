@@ -23,7 +23,7 @@ get '/species/:id' do
 
   FileManager.with_file(filename) do
     S3.new.get_file(filename)
-    S3.new.get_data(filename)
+    puts S3.new.get_data(filename)
     fullname = "#{S3::BASE_PATH}#{filename}"
     @species = []
     CSV.foreach(fullname, headers: true) do |row|

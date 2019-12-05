@@ -3,6 +3,8 @@ class S3
 
   def initialize
     @s3 = Aws::S3::Client.new(region: ENV['AWS_REGION'])
+    @keys = ['scientific_name','common_name','redlist_status','iucn_redlist_url']
+    @data = {}
   end
 
   def get_file(filename)
@@ -27,10 +29,9 @@ class S3
 
       # Callback for every event that arrives
       stream.on_event do |event|
-         next if event.nil?
-         puts event.event_type
-         puts event.payload.read unless (event.event_type == :stats || event.event_type == :end)
+        puts CSV.parse(event.payload.read).map {|a| Hash[ @keys.zip(a) ] } unless (event.event_type == :stats || event.event_type == :end)
       end
+      @data
     end
   end
 
