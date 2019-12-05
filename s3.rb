@@ -3,7 +3,7 @@ class S3
 
   def initialize
     @s3 = Aws::S3::Client.new(region: ENV['AWS_REGION'])
-    @keys = ['scientific_name','common_name','redlist_status','iucn_redlist_url']
+    @keys = Species.keys
     @species = []
   end
 
