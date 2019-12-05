@@ -14,7 +14,7 @@ class S3
       bucket: ENV['AWS_BUCKET'],
       key: filename,
       expression_type: 'SQL',
-      expression: "SELECT * FROM S3Object WHERE redlist_status = 'CR'",
+      expression: "SELECT * FROM S3Object WHERE redlist_status = 'CR' OR redlist_status = 'EN' OR redlist_status = 'VU'",
       input_serialization: {
         csv: { file_header_info: 'USE'}
       },
