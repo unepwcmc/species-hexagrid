@@ -1,6 +1,7 @@
 class S3
   BASE_PATH = './'.freeze
-  SQL_QUERY = "SELECT * FROM S3Object WHERE redlist_status = 'CR' OR redlist_status = 'EN' OR redlist_status = 'VU'".freeze
+  #SQL_QUERY = "SELECT * FROM S3Object WHERE redlist_status = 'CR' OR redlist_status = 'EN' OR redlist_status = 'VU'".freeze
+  SQL_QUERY = "SELECT * FROM S3Object LIMIT 100".freeze
 
   def initialize
     @s3 = Aws::S3::Client.new(region: ENV['AWS_REGION'])
@@ -19,7 +20,8 @@ class S3
       expression_type: 'SQL',
       expression: SQL_QUERY,
       input_serialization: {
-        csv: { file_header_info: 'USE'}
+        csv: { file_header_info: 'USE'},
+        compression_type: 'GZIP'
       },
       output_serialization: {
         csv: {}
