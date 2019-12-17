@@ -1,0 +1,211 @@
+//--------------------------------------------------
+// helpers
+//--------------------------------------------------
+// - fouc
+// - font
+// - lists
+// - display
+// - dimensions
+// - positioning
+// - margin & padding
+// - backgrounds
+// - simple styles
+//
+//--------------------------------------------------
+// fouc (flash of unstyled content)
+//--------------------------------------------------
+[v-cloak] { display: none; }
+
+//--------------------------------------------------
+// font
+//--------------------------------------------------
+strong, .bolder { font-weight: $bolder; }
+.bold { font-weight: $bold; }
+.light { font-weight: $light;}
+.normal { font-weight: normal; }
+.italic { font-style: italic; }
+
+.text-10 { font-size: rem-calc(10); }
+.text-12 { font-size: rem-calc(12); }
+.text-13 { font-size: rem-calc(13); }
+.text-14 { font-size: rem-calc(14); }
+.text-16 { font-size: rem-calc(16); }
+.text-24 {
+  font-size: rem-calc(20);
+  @include breakpoint($medium) { font-size: rem-calc(24); }
+}
+.text-30 {
+  font-size: rem-calc(24);
+  @include breakpoint($medium) { font-size: rem-calc(30); }
+}
+
+.text-large {position: static;
+  font-size: rem-calc(18);
+  // font-weight: $bold;
+  @include breakpoint($medium) { font-size: rem-calc(22); } 
+}
+
+.column-title {
+  max-width: rem-calc(105);;
+}
+
+.text-grey { color: $grey; }
+.text-red { color: $red; }
+.text-iucn { color: $iucn; }
+.text-white { color: $white; }
+.text-marketing-red { color: $marketing-red; }
+.text-marketing-date { font-size: rem-calc(30); }
+
+.text-anchor { 
+  color: $black;
+  text-decoration: none;
+}
+
+
+.fallback-message {
+  font-size: rem-calc(18);
+  font-weight: $light;
+  margin: rem-calc(14 0);
+  text-align: center;
+
+  @include breakpoint($small) { 
+    font-size: rem-calc(24); 
+    margin: rem-calc(60 0);
+  }
+}
+
+.no-transform { text-transform: none; }
+
+//--------------------------------------------------
+// dimensions
+//--------------------------------------------------
+.w-100 { width: 100%;}
+.centered {
+  max-width: 90%;
+  margin: 0 auto;
+  padding-top: 0;
+  text-align: center;
+  
+  @include breakpoint($small) { 
+    padding-top: $page-padding-bottom-large;
+    max-width: 30%;
+  }
+}
+
+//--------------------------------------------------
+// lists
+//--------------------------------------------------
+.ul-unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ul-inline li { display: inline-block; }
+
+//--------------------------------------------------
+// display
+//--------------------------------------------------
+.display-none { display: none; }
+.display-block { display: block; }
+.inline-block { display: inline-block; }
+
+.full-height { height: 100%; }
+.full-width { width: 100%; }
+
+.full-height-topbar {
+  height: calc(100vh - #{$topbarHeightSmall});
+
+  @include breakpoint ($small) {
+    height: calc(100vh - #{$topbarHeightMedium});
+  }
+
+  @include breakpoint ($medium) {
+    height: calc(100vh - #{$topbarHeightLarge});
+  }
+}
+
+//--------------------------------------------------
+// positioning
+//--------------------------------------------------
+.center { text-align: center; }
+.right { text-align: right; }
+.left { text-align: left; }
+
+.relative { position: relative; }
+
+.bottom {
+  &-2 { bottom: rem-calc(2) }
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.fixed--bottom {
+  position: fixed;
+  bottom: 0;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.z-0 { z-index: 0; }
+.z-1 { z-index: 1; }
+
+//--------------------------------------------------
+// margin & padding
+//--------------------------------------------------
+.no-margin--top { margin-top: 0; }
+.no-margin--bottom { margin-bottom: 0; }
+.no-margin { margin: 0; }
+.margin-center { margin: 0 auto; }
+.margin-space-top { margin-top: rem-calc(14); }
+.margin-space-right { margin-right: rem-calc(14); }
+.margin-space-bottom { margin-bottom: rem-calc(14); }
+.margin-space-left { margin-left: rem-calc(14); }
+.margin-space-top-small { margin-top: rem-calc(7) }
+
+.padding-space-left { padding-left: rem-calc(14) }
+.padding-space-right { padding-right: rem-calc(14) }
+
+//--------------------------------------------------
+// backgrounds
+//--------------------------------------------------
+.bg-red-light { background-color: $red-light }
+.bg-grey-xlight { background-color: $grey-xlight; }
+.bg-grey-light { background-color: $grey-light; }
+.bg-grey { background-color: $grey; }
+.bg-grey-dark { background-color: $grey-dark; }
+.bg-grey-xdark { background-color: $grey-xdark; }
+.bg-marketing-red { background-color: $marketing-red; }
+.bg-marketing-red-light { background-color: lighten($marketing-red, 30%); }
+
+.bg-image-overlay {
+  position: relative;
+  z-index: 0;
+
+  &:before {
+    background-color: rgba(black, 0.3);
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+//--------------------------------------------------
+// simple styles
+//--------------------------------------------------
+.note {
+  background-color: $grey;
+  color: $white;
+  margin: rem-calc(8 0);
+  padding: rem-calc(4 10);
+}

@@ -1,0 +1,163 @@
+//--------------------------------------------------
+// icons
+//--------------------------------------------------
+.icon {
+  @keyframes rotate {
+    0% { transform: rotate(1deg); }
+    100% {  transform: rotate(360deg); }
+  }
+
+  &-bear:before { transform: translateX(-11%); }
+  &-bird:before { transform: translateX(-12%); }
+  &-dolphin:before { transform: translateX(-32%); }
+
+  &-alert:before {
+    color: $red;
+    background-color: $white;
+    font-size: rem-calc(24);
+  }
+
+  &-refresh:before {
+    color: $grey;
+    font-size: rem-calc(24);
+  }
+
+  &-spinner-of-dots:before {
+    animation: rotate 5s linear infinite;
+  }
+
+  &-download:before {
+    background-image: image-url('icons/download.svg');
+    background-size: contain;
+    content: '';
+    width: rem-calc(38); height: rem-calc(40);
+  }
+
+  &-download-lock:before {
+    background-image: image-url('icons/download-lock.svg');
+    background-size: contain;
+    content: '';
+    width: rem-calc(38); height: rem-calc(40);
+  }
+
+  &--help-link {
+    background-color: $white;
+    border-radius: 100%;
+    color: $grey;
+    font-size: rem-calc(15);
+    margin: 0 rem-calc(4);
+    text-align: center;
+    width: rem-calc(22); height: rem-calc(22);
+  }
+
+  &--info {
+    @extend .flex;
+    @extend .flex-center;
+    background-color: rgba($white, .6);
+    border-radius: 100%;
+    color: $grey;
+    font-size: rem-calc(15);
+    width: rem-calc(23); height: rem-calc(23);
+
+    &:hover { background-color: rgba($white, .8); }
+
+    &-grey {
+      @extend .flex;
+      @extend .flex-center;
+      background-color: rgba($grey, .6);
+      border-radius: 100%;
+      color: $white;
+      font-size: rem-calc(15);
+      width: rem-calc(23); height: rem-calc(23);
+
+      &:hover { background-color: rgba($grey, .8); }
+    }
+  }
+
+  &--redlist {
+    @extend .flex-center;
+    background-color: $iucn;
+    border-radius: 100px;
+    border-top-right-radius: 0;
+    color: white;
+    font-size: rem-calc(25);
+    font-style: normal;
+    font-weight: $bold;
+    width: rem-calc(54); height: rem-calc(54);
+
+    &-grey { background-color: $grey; }
+
+    &-medium {
+      @extend .icon--redlist;
+      font-size: rem-calc(14);
+      width: rem-calc(34); height: rem-calc(34);
+
+      @include breakpoint($small) {
+        font-size: rem-calc(18);
+        width: rem-calc(46); height: rem-calc(46);
+      }
+    }
+
+    &-small {
+      @extend .icon--redlist;
+      font-size: rem-calc(11);
+      width: rem-calc(20); height: rem-calc(20);
+    }
+  }
+
+  &--tooltip {
+    @extend .flex-inline;
+    @extend .flex-center;
+    background-color: $grey-light;
+    border-radius: 100%;
+    color: white;
+    cursor: pointer;
+    font-size: rem-calc(14);
+    width: rem-calc(22); height: rem-calc(22);
+
+    &--red {
+      @extend .flex-inline;
+      @extend .flex-center;
+      background-color: $red;
+      border-radius: 100%;
+      color: white;
+      cursor: pointer;
+      font-size: rem-calc(14);
+      width: rem-calc(22); height: rem-calc(22);
+    }
+  }
+
+  &--small {
+    font-size: rem-calc(12);
+    margin-top: rem-calc(3);
+  }
+
+  &--payment-spinner {
+    font-size: rem-calc(50);
+  }
+  
+  &--error {
+    font-size: rem-calc(100);
+    position: relative;
+    bottom: rem-calc(-25);
+    left: rem-calc(-105);
+  }
+
+//--------------------------------------------------
+// social
+//--------------------------------------------------
+  &--social {
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    display: block;
+
+    &:hover { opacity: .75; }
+
+    &-linkedin {
+      background-image: image-url('logos/linkedin.svg');
+      width: rem-calc(80); height: rem-calc(28);
+    }
+  }
+}

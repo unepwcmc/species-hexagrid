@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <link rel="stylesheet" type="text/css" href="/stylesheets/sass/style.css" />
-      <title>Species View</title>
-    </head>
-    <body>
-      <div class='test'>
-        <% @rows.each do |row| %>
-          <%= row %>
-        <% end %>
+  <%= erb :'partials/_header' %>
+  <body>
+    <div class="card--dataset-stats box box-padding box-margin-bottom flex flex-wrap">
+      <div class="flex-s-whole flex-2-fiths card__column-left">
+      <img src="https://ibat-assets-production.s3.eu-west-2.amazonaws.com/red-list.svg" alt="redlist logo" class="card__logo">
+      <h2 class="heading--simple">
+        <a href="http://www.iucnredlist.org/" title="Visit RedList" target="_blank">IUCN RedList</a>
+      </h2>
+      <p class="card__buffer light"><%= @area %>km</p>
+      <p>This shows the number of species assessed on the IUCN Red List of Threatened Species that potentially occur within <%= @area %>km of this site. </p>
+
+      <div class="card__total-wrapper flex flex-column flex-center margin-center">
+        <span class="card__total text-redlist"><%= @total_count %></span>
+        <span class="card__type">Species</span>
       </div>
-    </body>
+
+      <p class="card__smallprint">
+        <span class="card__smallprint-line">TODO: Detail the geospatial location of this dateset.</span>
+      </p>
+    </div>
+
+    <div class="flex-s-whole flex-3-fiths flex flex-v-center">
+      <ul class="ul-unstyled card__list">
+        <%= erb :'partials/_card-list', locals: {total: @species['CR']&.count, id: "CR", name: "Critically Endangered"} %>
+        <%= erb :'partials/_card-list', locals: {total: @species['EN']&.count, id: "EN", name: "Endangered"} %>
+        <%= erb :'partials/_card-list', locals: {total: @species['VU']&.count, id: "VU", name: "Vulnerable"} %>
+      </ul>
+      </div>
+    </div>
+    <div class="report__page-break"></div>
+    <%= erb :'partials/_report', locals: {id: "CR", grouped_species: @species['CR'], area: @area} %>
+    <%= erb :'partials/_report', locals: {id: "EN", grouped_species: @species['EN'], area: @area} %>
+    <%= erb :'partials/_report', locals: {id: "VU", grouped_species: @species['VU'], area: @area} %>
+  </body>
 </html>

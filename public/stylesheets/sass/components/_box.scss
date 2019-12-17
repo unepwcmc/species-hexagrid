@@ -1,0 +1,22 @@
+//--------------------------------------------------
+// box
+//--------------------------------------------------
+.box {
+    background-color: $grey-xlight;
+    border: solid 1px $grey-light;
+  
+    &-grey { 
+      background-color: $grey-lighter;
+      border: rem-calc(1) solid;
+      border-color: $grey-light;
+    }
+  
+    &-padding { 
+      padding: rem-calc(12 14);
+  
+      @include breakpoint($medium) { padding: rem-calc(22 34); }
+    }
+  
+    &-margin-top { margin-top: rem-calc(22); }
+    &-margin-bottom { margin-bottom: rem-calc(30); }
+  }

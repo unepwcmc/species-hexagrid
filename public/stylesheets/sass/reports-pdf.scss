@@ -1,0 +1,263 @@
+//--------------------------------------------------
+// imports
+//--------------------------------------------------
+@import './utilities/rem-calc.scss';
+@import './utilities/variables.scss';
+@import './utilities/media-queries.scss';
+@import './utilities/flexbox.scss';
+@import './utilities/base.scss';
+@import './utilities/helpers.scss';
+
+//--------------------------------------------------
+// variables
+//--------------------------------------------------
+@import './utilities/variables.scss';
+
+$grey-xlight: #e7e7e7;
+$red: #DD2E26;
+
+//--------------------------------------------------
+// base
+//--------------------------------------------------
+html, body {
+  width: 100%; height: 100%;
+}
+
+body {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+h1, h2, h3, strong, th {
+  font-weight: 500;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 28px;
+  margin: 5px 0;
+}
+
+h2 { font-size: 20px; }
+
+h3 {
+  font-size: 16px;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+a { color: black; }
+
+.ul--small {
+  padding-left: 14px;
+}
+
+//--------------------------------------------------
+// box
+//--------------------------------------------------
+.box--small {
+  font-size: 11px;
+  padding: 10px;
+
+  ul {
+    margin: 0;
+    padding-left: 14px;
+  }
+
+  p { margin: 0 0 3px 0; }
+}
+
+//--------------------------------------------------
+// icons
+//--------------------------------------------------
+%icon {
+  border-radius: 100%;
+  margin-right: 8px;
+  width: 24px; height: 24px;
+
+  display: inline-block;
+}
+
+.icon {
+  &--high {
+    @extend %icon;
+    background-color: $red;
+  }
+
+  &--redlist {
+    @extend %icon;
+    width: 30px; height: 30px;
+    background-color: $iucn;
+    border-top-right-radius: 0;
+    position: relative;
+    bottom: 5px;
+  }
+
+  &--grey {
+    @extend %icon;
+    width: 16px; height: 16px;
+    background-color: $grey-light;
+  }
+}
+
+//--------------------------------------------------
+// custom
+//--------------------------------------------------
+.report {
+  &__logo {
+    width: 180px; height: 62px;
+  }
+
+  &__tagline {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  &__page-break + h3 {
+    margin-top: 0;
+  }
+
+  &__page-break {
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+
+  &__multisite {
+    &--redlist-intro-wrapper {
+      margin-top: rem-calc(8);
+      display: flex;
+      align-items: flex-end;
+      page-break-inside: avoid;
+    }
+  }
+
+  &__overview-list {
+    margin: 40px 0;
+    padding: 0;
+
+    li {
+      list-style: none;
+      margin: 10px 0;
+    }
+  }
+
+  &__overlaps {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 10px 0;
+    padding: 11px 13px;
+
+    span { float: right; }
+
+    &-multiple {
+      span {
+        width: 14%;
+        &:first-child {
+          width: 40%;
+          text-align: left;
+        }
+        text-align: right;
+        float: none;
+        display: inline-block;
+      }
+    }
+  }
+
+  &__map-wrapper {
+    margin: 50px 0 0 0;
+  }
+
+    &__map {
+      height: 300px;
+      width: 100%;
+
+      img { width: 100%; }
+
+      .report--freshwater & { margin: 0 0 20px 0; }
+    }
+
+    &__map-credit {
+      background-color: rgba(white, 0.5);
+      padding: 2px 6px;
+
+      position: absolute;
+      bottom: 12px;
+      right: 0;
+      z-index: 1;
+    }
+
+  &__table {
+    border-collapse: collapse;
+    width: 100%;
+
+    th,
+    td {
+      border: 3px solid white;
+      padding: 15px;
+
+      &:first-child { border-left: none; }
+      &:last-child { border-right: none; }
+
+      &.center { text-align: center; }
+    }
+
+    th {
+      color: $white;
+      font-weight: $bold;
+      text-align: left;
+
+      &.right {
+        @extend th;
+        text-align: right;
+      }
+    }
+
+    tbody.break-word { word-wrap: break-word; }
+    tbody tr { background-color: #f7f7f7; }
+
+    tr:nth-child(even) { background-color: $grey-xlight; }
+  }
+}
+
+//--------------------------------------------------
+// helpers
+//--------------------------------------------------
+.black { color: $black; }
+.red { color: $red; }
+.bg-grey { background-color: $grey; }
+.bg-grey-light { background-color: $grey-light; }
+.bg-grey-xlight { background-color: $grey-xlight; }
+.bg-red { background-color: $red; }
+
+.center { text-align: center; }
+
+.text-10 {
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.text-14 {
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.fixed-layout { table-layout: fixed; }
+
+.flex { display: flex; }
+.flex-h-between { justify-content: space-between; }
+
+.page-break-inside-avoid { page-break-inside: avoid; }
