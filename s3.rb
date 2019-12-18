@@ -16,7 +16,7 @@ class S3
       bucket: ENV['AWS_BUCKET'],
       key: filename,
       expression_type: 'SQL',
-      expression: "#{query} t WHERE t.HEX_ID = '#{cell_id.to_i}'",
+      expression: query(cell_id),
       input_serialization: {
         csv: { file_header_info: 'USE'}#,
         #compression_type: 'GZIP'
@@ -42,8 +42,12 @@ class S3
 
   private
 
-  def query
+  def base_query
     "SELECT #{Species.keys.join(',')} FROM S3Object"
+  end
+
+  def query(cell_id)
+    "#{base_query} t WHERE t.HEX_ID = '#{cell_id.to_i}' AND t.category IN (#{Species.threatened_list})"
   end
 
   def params(filename)

@@ -16,6 +16,10 @@ module Species
     species.select { |s| THREATENED.include?(s['category'].upcase) }
   end
 
+  def threatened_list
+    THREATENED.map { |c| "'#{c}'" }.join(',')
+  end
+
   def keys
     KEYS
   end
