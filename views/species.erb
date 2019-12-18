@@ -9,16 +9,12 @@
         <a href="http://www.iucnredlist.org/" title="Visit RedList" target="_blank">IUCN RedList</a>
       </h2>
       <p class="card__buffer light"><%= @area %>km</p>
-      <p>This shows the number of species assessed on the IUCN Red List of Threatened Species that potentially occur within <%= @area %>km of this site. </p>
+      <p>This shows the number of threatened species assessed on the IUCN Red List of Threatened Species that potentially occur within <%= @area %>km of this site. </p>
 
       <div class="card__total-wrapper flex flex-column flex-center margin-center">
         <span class="card__total text-redlist"><%= @total_count %></span>
         <span class="card__type">Species</span>
       </div>
-
-      <p class="card__smallprint">
-        <span class="card__smallprint-line">TODO: Detail the geospatial location of this dateset.</span>
-      </p>
     </div>
 
     <div class="flex-s-whole flex-3-fiths flex flex-v-center">
