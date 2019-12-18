@@ -43,7 +43,7 @@ class S3
   private
 
   def query
-    "SELECT #{::Species.keys.join(',')} FROM S3Object"
+    "SELECT #{Species.keys.join(',')} FROM S3Object"
   end
 
   def params(filename)
