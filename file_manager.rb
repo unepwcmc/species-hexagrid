@@ -12,6 +12,7 @@ module FileManager
 
   GROUP_VAL = 4.freeze
   def calculate_file_index(cell_id)
+    cell_id = cell_id.to_i
     return round_sigfigs(cell_id, cell_id.to_s.length - GROUP_VAL)
   end
 
