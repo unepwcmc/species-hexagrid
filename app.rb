@@ -5,12 +5,7 @@ require 'sinatra'
 require 'json'
 require 'dotenv/load'
 
-get '/' do
-  #"Hello world! Version 3. Now with test-suite! </br>"
-  erb :index
-end
-
-get '/species/:id' do
+get '/:id' do
   require 'csv'
   require 'aws-sdk-resources'
   require_relative 's3'
