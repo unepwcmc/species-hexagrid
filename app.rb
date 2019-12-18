@@ -23,10 +23,9 @@ get '/species/:id' do
   @rows = []
 
   FileManager.with_file(filename) do
-    @species = S3.new.get_data(filename, params[:id])
-    @redlist_threatened = Species.order_species(@species)
-    @total_count = @species.count
-    @species = @species.group_by { |hash| hash['category'] }
+    species = S3.new.get_data(filename, params[:id])
+    @total_count = species.count
+    @species = species.group_by { |hash| hash['category'] }
     @area = 50
   end
 
