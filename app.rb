@@ -18,15 +18,15 @@ get '/species/:id' do
   require_relative 'species'
   require 'aws-sdk-s3'
 
-  filename = "test_#{params[:id]}.csv"
+  file_index = FileManager.calculate_file_index(params[:id])
+  filename = "splits_with_attributes/out_#{file_index}.csv"
   @rows = []
 
   FileManager.with_file(filename) do
-    @species = S3.new.get_data(filename)
-    fullname = "#{S3::BASE_PATH}#{filename}"
+    @species = S3.new.get_data(filename, params[:id])
     @redlist_threatened = Species.order_species(@species)
     @total_count = @species.count
-    @species = @species.group_by { |hash| hash['redlist_status'] }
+    @species = @species.group_by { |hash| hash['category'] }
     @area = 50
   end
 
