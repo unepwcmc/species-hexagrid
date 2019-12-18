@@ -42,7 +42,7 @@ strong, .bolder { font-weight: $bolder; }
 .text-large {position: static;
   font-size: rem-calc(18);
   // font-weight: $bold;
-  @include breakpoint($medium) { font-size: rem-calc(22); } 
+  @include breakpoint($medium) { font-size: rem-calc(22); }
 }
 
 .column-title {
@@ -56,7 +56,7 @@ strong, .bolder { font-weight: $bolder; }
 .text-marketing-red { color: $marketing-red; }
 .text-marketing-date { font-size: rem-calc(30); }
 
-.text-anchor { 
+.text-anchor {
   color: $black;
   text-decoration: none;
 }
@@ -68,8 +68,8 @@ strong, .bolder { font-weight: $bolder; }
   margin: rem-calc(14 0);
   text-align: center;
 
-  @include breakpoint($small) { 
-    font-size: rem-calc(24); 
+  @include breakpoint($small) {
+    font-size: rem-calc(24);
     margin: rem-calc(60 0);
   }
 }
@@ -79,14 +79,15 @@ strong, .bolder { font-weight: $bolder; }
 //--------------------------------------------------
 // dimensions
 //--------------------------------------------------
-.w-100 { width: 100%;}
+.w-100 { width: 100%; }
+.w-80 { width: 80%; }
 .centered {
   max-width: 90%;
   margin: 0 auto;
   padding-top: 0;
   text-align: center;
-  
-  @include breakpoint($small) { 
+
+  @include breakpoint($small) {
     padding-top: $page-padding-bottom-large;
     max-width: 30%;
   }
