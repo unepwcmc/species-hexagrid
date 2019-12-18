@@ -692,6 +692,9 @@ strong, .bolder {
 .w-100 {
   width: 100%; }
 
+.w-80 {
+  width: 80%; }
+
 .centered {
   max-width: 90%;
   margin: 0 auto;
@@ -2079,6 +2082,9 @@ strong, .bolder {
 
 .w-100 {
   width: 100%; }
+
+.w-80 {
+  width: 80%; }
 
 .centered {
   max-width: 90%;
