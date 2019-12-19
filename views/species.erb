@@ -19,15 +19,15 @@
 
     <div class="flex-s-whole flex-3-fiths flex flex-v-center">
       <ul class="ul-unstyled card__list">
-        <%= erb :'partials/_card-list', locals: {total: @species['CR']&.count, id: "CR", name: "Critically Endangered"} %>
-        <%= erb :'partials/_card-list', locals: {total: @species['EN']&.count, id: "EN", name: "Endangered"} %>
-        <%= erb :'partials/_card-list', locals: {total: @species['VU']&.count, id: "VU", name: "Vulnerable"} %>
+        <% Species::IUCN_CATEGORIES.each do |cat, name| %>
+          <%= erb :'partials/_card-list', locals: {total: @species[cat]&.count, id: cat, name: name} %>
+        <% end %>
       </ul>
       </div>
     </div>
     <div class="report__page-break"></div>
-    <%= erb :'partials/_report', locals: {id: "CR", grouped_species: @species['CR'], area: @area} %>
-    <%= erb :'partials/_report', locals: {id: "EN", grouped_species: @species['EN'], area: @area} %>
-    <%= erb :'partials/_report', locals: {id: "VU", grouped_species: @species['VU'], area: @area} %>
+    <% Species::IUCN_CATEGORIES.keys.each do |cat| %>
+      <%= erb :'partials/_report', locals: {id: cat, grouped_species: @species[cat], area: @area} %>
+    <% end %>
   </body>
 </html>
