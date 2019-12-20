@@ -47,7 +47,7 @@ class S3
   end
 
   def query(cell_id)
-    "#{base_query} t WHERE t.HEX_ID = '#{cell_id.to_i}' AND t.category IN (#{Species.threatened_list})"
+    "#{base_query} t WHERE t.HEX_ID = '#{cell_id.to_i}' AND t.category IN (#{Species.categories_list})"
   end
 
   def params(filename)
