@@ -18,8 +18,8 @@ class S3
       expression_type: 'SQL',
       expression: query(cell_id),
       input_serialization: {
-        csv: { file_header_info: 'USE'}#,
-        #compression_type: 'GZIP'
+        csv: { file_header_info: 'USE'},
+        compression_type: 'GZIP'
       },
       output_serialization: {
         csv: {}
