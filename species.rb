@@ -2,7 +2,7 @@ module Species
   extend self
 
   #KEYS = ['scientific_name','common_name','redlist_status','iucn_redlist_url'].freeze
-  KEYS = %w(ID_NO HEX_ID binomial common_nam category).freeze
+  KEYS = %w(ID_NO HEX_ID binomial common_name category).freeze
   IUCN_CATEGORIES = {
     'CR' => 'Critically Endangered',
     'EN' => 'Endangered',
