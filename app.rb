@@ -14,7 +14,7 @@ get '/:id' do
   require 'aws-sdk-s3'
 
   file_index = FileManager.calculate_file_index(params[:id])
-  filename = "splits_with_attributes_new/out_#{file_index}.csv.gz"
+  filename = "splits_with_attributes_fixed/out_#{file_index}.csv.gz"
   @rows = []
 
   FileManager.with_file(filename) do
