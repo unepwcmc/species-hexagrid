@@ -16,7 +16,7 @@
       <% grouped_species.each do |row| %>
         <tr>
           <td><%= row["binomial"] %></td>
-          <td><%= row["common_nam"] %></td>
+          <td><%= row["common_name"] %></td>
           <td><%= row["category"] %></td>
           <td><a href='http://apiv3.iucnredlist.org/api/v3/website/<%= row["binomial"] %>'>Link</a></td>
         </tr>
