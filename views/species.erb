@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Species View</title>
-    </head>
-    <body>
-        <% @rows.each do |row| %>
-          <%= row %>
+  <%= erb :'partials/_header' %>
+  <body class='w-80 margin-center'>
+    <div class="card--dataset-stats box box-padding box-margin-top box-margin-bottom flex flex-wrap">
+      <div class="flex-s-whole flex-2-fiths card__column-left">
+      <img src="https://ibat-assets-production.s3.eu-west-2.amazonaws.com/red-list.svg" alt="redlist logo" class="card__logo">
+      <h2 class="heading--simple">
+        <a href="http://www.iucnredlist.org/" title="Visit RedList" target="_blank">IUCN RedList</a>
+      </h2>
+      <p class="card__buffer light"><%= @area %>km</p>
+      <p>This shows the number of threatened species assessed on the IUCN Red List of Threatened Species that potentially occur within <%= @area %>km of this site. </p>
+
+      <div class="card__total-wrapper flex flex-column flex-center margin-center">
+        <span class="card__total text-redlist"><%= @total_count %></span>
+        <span class="card__type">Species</span>
+      </div>
+    </div>
+
+    <div class="flex-s-whole flex-3-fiths flex flex-v-center">
+      <ul class="ul-unstyled card__list">
+        <% Species::IUCN_CATEGORIES.each do |cat, name| %>
+          <%= erb :'partials/_card-list', locals: {total: @species[cat]&.count, id: cat, name: name} %>
         <% end %>
-    </body>
+      </ul>
+      </div>
+    </div>
+    <div class="report__page-break"></div>
+    <% Species::IUCN_CATEGORIES.keys.each do |cat| %>
+      <%= erb :'partials/_report', locals: {id: cat, grouped_species: @species[cat], area: @area} %>
+    <% end %>
+  </body>
 </html>

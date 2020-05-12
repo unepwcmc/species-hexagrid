@@ -1,0 +1,29 @@
+<section class="report__content">
+<h3>IUCN Red List of Threatened Species - <%= id %></h3>
+<% if grouped_species&.any? %>
+<p>The following species are potentially found within <%= @area %>km of the area of interest.</p>
+  <table class="report__table">
+    <thead class="bg-red">
+      <tr>
+        <th>Species name</th>
+        <th>Common name</th>
+        <th>IUCN Category</th>
+        <th>Link to IUCN Red List</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% grouped_species.each do |row| %>
+        <tr>
+          <td><%= row["binomial"] %></td>
+          <td><%= row["common_name"] %></td>
+          <td><%= row["category"] %></td>
+          <td><a href='http://apiv3.iucnredlist.org/api/v3/website/<%= row["binomial"] %>'>Link</a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>There are no <%= id %> species to show for this report.</p>
+<% end %>
+</section>

@@ -1,0 +1,262 @@
+//--------------------------------------------------
+// html elements
+//--------------------------------------------------
+* {
+  box-sizing: border-box;
+  font-family: $body-font;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: $body-font;
+  margin: 0;
+}
+
+h1 {
+  font-size: rem-calc(18);
+  font-weight: $bold;
+  margin-bottom: rem-calc(2);
+  text-transform: uppercase;
+
+  &+ p {
+    margin-top: 0;
+  }
+
+  &.heading--marketing {
+    font-size: rem-calc(38);
+    font-weight: $light;
+    text-transform: none;
+
+    @include breakpoint($small) { font-size: rem-calc(60); }
+  }
+
+  &.heading--simple {
+    font-size: rem-calc(25);
+    font-weight: $light;
+    margin-bottom: rem-calc(25);
+    text-transform: capitalize;
+
+    @include breakpoint($small) { font-size: rem-calc(30); }
+
+    &--no-margin {
+      font-size: rem-calc(25);
+      font-weight: $light;
+      text-transform: capitalize;
+
+      @include breakpoint($small) { font-size: rem-calc(30); }
+    }
+  }
+
+  &.heading--inline {
+    display: inline;
+    padding-right: rem-calc(10);
+  }
+}
+
+h2 {
+  font-size: rem-calc(18);
+  font-weight: normal;
+
+  @include breakpoint($small) { font-size: rem-calc(20); }
+
+  &.heading--marketing {
+    font-size: rem-calc(26);
+    font-weight: $light;
+
+    @include breakpoint($small) { font-size: rem-calc(30); }
+    @include breakpoint($medium) { font-size: rem-calc(32); }
+  }
+
+  &.heading--simple {
+    font-size: rem-calc(25);
+    font-weight: $light;
+    margin-bottom: 0;
+    text-transform: capitalize;
+
+    @include breakpoint($small) { font-size: rem-calc(30); }
+  }
+
+  &.heading--underlined {
+    font-weight: bold;
+    margin: rem-calc(30 0);
+    width: 100%;
+
+    &:after {
+      border-bottom: solid 1px $body-font-color;
+      content: '';
+      width: 100%;
+
+      display: block;
+      position: relative;
+      bottom: rem-calc(-10);
+    }
+  }
+}
+
+h3 {
+  font-weight: $bold;
+
+  &.heading--marketing {
+    font-size: rem-calc(22);
+    font-weight: $light;
+    margin-top: 0;
+    margin-bottom: rem-calc(12);
+
+    @include breakpoint($small) {
+      font-size: rem-calc(28);
+      margin-bottom: rem-calc(16);
+    }
+
+    @include breakpoint($medium) {
+      font-size: rem-calc(30);
+      margin-bottom: rem-calc(18);
+    }
+  }
+}
+
+h4 {
+  font-weight: $bold;
+}
+
+p {
+  line-height: $body-line-height;
+  margin-top: 0;
+  margin-bottom: rem-calc(14);
+}
+
+a {
+  &:hover { text-decoration: none; }
+
+  &.a--plain {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover { text-decoration: underline; }
+  }
+
+  &.a--match-colour {
+    color: inherit;
+  }
+}
+
+ul {
+  line-height: 1.5;
+  margin: rem-calc(8 0 10 0);
+  padding-left: rem-calc(16);
+}
+
+li {
+  margin-bottom: rem-calc(6);
+}
+
+blockquote {
+  font-size: rem-calc(22);
+  font-weight: $light;
+  line-height: 1.3;
+  margin: rem-calc(0 0 20 0);
+
+  @include breakpoint($small) { font-size: rem-calc(26); }
+  @include breakpoint($medium) { font-size: rem-calc(30); }
+}
+
+//--------------------------------------------------
+// site structure - reusable styles
+//--------------------------------------------------
+%container {
+  margin: 0 auto;
+  padding-right: rem-calc($gutter-small);
+  padding-left: rem-calc($gutter-small);
+  width: 100%;
+
+  @include breakpoint($medium){
+    padding-right: rem-calc($gutter-medium);
+    padding-left: rem-calc($gutter-medium);
+  }
+
+  @include breakpoint($large){
+    padding-right: rem-calc($gutter-large);
+    padding-left: rem-calc($gutter-large);
+  }
+}
+
+//--------------------------------------------------
+// site structure
+//--------------------------------------------------
+.site-width {
+  @include breakpoint($large){ width: $site-width; }
+}
+
+.gutter--left {
+  padding-left: $gutter-small;
+  @include breakpoint($medium) { padding-left: $gutter-medium; }
+  @include breakpoint($large) { padding-left: $gutter-large; }
+}
+
+.gutter--right {
+  padding-right: $gutter-small;
+  @include breakpoint($medium) { padding-right: $gutter-medium; }
+  @include breakpoint($large) { padding-right: $gutter-large; }
+}
+
+.gutters {
+  @extend .gutter--left;
+  @extend .gutter--right;
+}
+
+.container {
+  @extend .site-width;
+  @extend %container;
+
+  &--small {
+    @extend %container;
+    max-width: rem-calc(600);
+
+    @include breakpoint($medium){ width: rem-calc(600); }
+  }
+
+  &--medium {
+    @extend %container;
+    @include breakpoint($small){ width: rem-calc(700); }
+    @include breakpoint($medium){ width: rem-calc(800); }
+  }
+}
+
+//--------------------------------------------------
+// page padding
+//--------------------------------------------------
+.page-padding--top {
+  padding-top: $page-padding-top-small;
+  @include breakpoint($medium) { padding-top: $page-padding-top-medium; }
+  @include breakpoint($large) { padding-top: $page-padding-top-large; }
+}
+
+.page-padding--bottom {
+  padding-bottom: $page-padding-bottom-small;
+  @include breakpoint($medium) { padding-bottom: $page-padding-bottom-medium; }
+  @include breakpoint($large) { padding-bottom: $page-padding-bottom-large; }
+}
+
+.page-padding {
+  @extend .page-padding--top;
+  @extend .page-padding--bottom;
+}
+
+//--------------------------------------------------
+// section padding
+//--------------------------------------------------
+.section-padding--top {
+  padding-top: $section-padding-top-small;
+  @include breakpoint($medium) { padding-top: $section-padding-top-medium; }
+  @include breakpoint($large) { padding-top: $section-padding-top-large; }
+}
+
+.section-padding--bottom {
+  padding-bottom: $section-padding-bottom-small;
+  @include breakpoint($medium) { padding-bottom: $section-padding-bottom-medium; }
+  @include breakpoint($large) { padding-bottom: $section-padding-bottom-large; }
+}
+
+.section-padding {
+  @extend .section-padding--top;
+  @extend .section-padding--bottom;
+}

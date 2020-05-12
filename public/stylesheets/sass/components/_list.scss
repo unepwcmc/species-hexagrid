@@ -1,0 +1,402 @@
+//--------------------------------------------------
+// list - html elements
+//--------------------------------------------------
+.ul {
+  &-no-margin { margin: 0; }
+
+  &-margin { margin: rem-calc(20 0); }
+
+//--------------------------------------------------
+// dashboard
+//--------------------------------------------------
+  &--dashboard {
+    flex-direction: column;
+    padding: rem-calc(30 0);
+    width: 100%; 
+
+    @include breakpoint($small) { 
+      flex-direction: row;
+      padding: rem-calc(60 0);
+    }
+
+    .ul {
+      &__li {
+        &-3 {
+          display: none;
+
+          @include breakpoint($medium) { display: inline-flex; }
+        }
+      }
+
+        &__a {
+          background-color: $grey;
+          border-radius: 100%;
+          color: $white;
+          font-size: rem-calc(18);
+          font-weight: $bold;
+          text-align: center;
+          text-decoration: none;
+          width: 60vw; height: 60vw;
+
+          display: flex;
+
+          @include breakpoint($small) {
+            font-size: 1.9vw;
+            width: 30vw; height: 30vw;
+          }
+
+          @include breakpoint($medium) { 
+            font-size: 1.7vw;
+            width: 22vw; height: 22vw;
+          }
+
+          @include breakpoint($large) { 
+            font-size: rem-calc(20);
+            width: rem-calc(260); height: rem-calc(260); 
+          }
+        }
+
+          &__icon {
+            font-size: 13vw;
+            @include breakpoint($small) { font-size: 6vw; }
+            @include breakpoint($medium) { font-size: 5vw; }
+            @include breakpoint($large) { font-size: rem-calc(60); }
+          }
+
+          &__span { line-height: 1.2; }
+    }
+  }
+
+//--------------------------------------------------
+// list - table
+//--------------------------------------------------
+  &--table {
+    margin: rem-calc(34 0 30 0);
+
+    .site-item {
+      &:hover { cursor: pointer; }
+    }
+    
+    .ul {
+      &__li {
+        background-color: white;
+        border: solid white rem-calc(1);
+        font-size: rem-calc(25);
+        font-weight: $bold;
+        margin-bottom: rem-calc(10);
+        width: auto; height: rem-calc(50);
+
+        @include breakpoint($small) { height: rem-calc(82); }
+
+        &:hover {
+          border: solid $grey-light rem-calc(1);
+          box-shadow: $grey-light 0 2px 2px 0;
+        }
+
+        &--header {
+          font-size: rem-calc(20);
+          line-height: 1.2;
+
+          display: none;
+
+          @include breakpoint($medium) { display: flex; }
+        }
+
+        &-column {
+          padding: rem-calc(8 12 8 4);
+          margin-bottom: 0;
+
+          display: inline-flex;
+
+          &:first-child { 
+            @include breakpoint($small) { padding: rem-calc(8 10 8 12); }
+          }
+
+          &-small { 
+            font-size: rem-calc(16); 
+
+            @include breakpoint($small) { font-size: rem-calc(18); }
+          }
+        }
+      }
+
+        &__a,
+        &__button {
+          color: inherit;
+          margin: rem-calc(0 2);
+          text-decoration: none;
+          height: 100%;
+        }
+
+          &__icon {
+            font-size: rem-calc(24);
+            &-up-to-date { color: green }
+            &-update-in-progress { color: orange }
+            &-requires-update { color: red }
+          }
+    }
+  }
+
+  &--sites {
+    .ul {
+      &__li {
+        &-column {
+          &-1 { @include breakpoint($medium) { width: 5%; } }
+          &-2 { 
+            width: rem-calc(52); 
+            @include breakpoint($medium) { width: 5%; } 
+          }
+          &-3 { @include breakpoint($medium) { width: 20%; } }
+          &-4 { @include breakpoint($medium) { width: 15%; } }
+          &-5 { @include breakpoint($medium) { width: 13%; } }
+          &-6 { @include breakpoint($medium) { width: 15%; } }
+          &-7 { @include breakpoint($medium) { width: 15%; } }
+          &-8 { @include breakpoint($medium) { width: 3%; } }
+          &-9 { @include breakpoint($medium) { width: 3%; } }
+          &-10 { @include breakpoint($medium) { width: 4%; } }
+
+
+          &-4, 
+          &-5,
+          &-6,
+          &-7,
+          &-8,
+          &-9 {
+            display: none;
+
+            @include breakpoint($medium) { display: inline-flex; }
+          }
+        } 
+      }
+    }
+  }
+
+  &--reports {
+    .ul {
+      &__li {
+        &-column {
+          &-1 { @include breakpoint($medium) { width: 4%; } }
+          &-2 { @include breakpoint($medium) { width: 5%; } }
+          &-3 { @include breakpoint($medium) { width: 24%; } }
+          &-4 { @include breakpoint($medium) { width: 20%; } }
+          &-5 { @include breakpoint($medium) { width: 15%; } }
+          &-6 { @include breakpoint($medium) { width: 14%; } }
+          &-7 { @include breakpoint($medium) { width: 8%; } }
+
+          &-4, 
+          &-5,
+          &-6,
+          &-7 {
+            display: none;
+
+            @include breakpoint($medium) { display: inline-flex; }
+          }
+        } 
+      }
+    }
+  }
+
+//--------------------------------------------------
+// list - white
+//--------------------------------------------------
+&--table-white {
+  &--header { 
+    margin: rem-calc(40 0 0 0); 
+  }
+
+  &--body { 
+    margin-top: 0;
+    overflow-y: scroll;
+  }
+
+  .ul {
+    &__li {
+      background-color: white;
+      border: solid $grey-light rem-calc(1);
+      box-shadow: $grey-light 0 2px 2px 0;
+      font-size: rem-calc(25);
+      font-weight: $bold;
+      margin-bottom: rem-calc(10);
+      padding-left: rem-calc(14);
+      width: auto; height: rem-calc(50);
+
+      @include breakpoint($small) { height: rem-calc(82); }
+
+      &--header {
+        font-size: rem-calc(20);
+        line-height: 1.2;
+
+        display: none;
+
+        @include breakpoint($medium) { display: flex; }
+      }
+
+      &-column {
+        &-1 { @include breakpoint($medium) { width: 54%; } }
+        &-2 { 
+          display: none;
+
+          @include breakpoint($medium) { 
+            width: 40%; 
+
+            display: inline-flex;
+          }
+        }
+        &-3 { 
+          width: rem-calc(56);
+        }
+      } 
+    }
+
+      &__a {
+        text-decoration: none;
+      }
+  }
+}
+
+//--------------------------------------------------
+// list - plain
+// 
+// - user accounts
+// - subscriptions
+//--------------------------------------------------
+  &--table-plain {
+    width: 100%;
+
+    @include breakpoint($small) { font-size: rem-calc(18); }
+
+    .ul {
+      &__li {
+        border-bottom: solid 1px $grey-light;
+        font-weight: $light;
+        margin: 0;
+        height: rem-calc(43);
+
+        @include breakpoint($small) { height: rem-calc(63); }
+
+        &--header { 
+          font-weight: $bold;
+          height: rem-calc(30); 
+        }
+      }
+    }
+
+    &.ul--datasets {
+      .ul__li-column {
+        &-1 { 
+          width: 90%;
+          @include breakpoint($medium) { width: 50%; }
+        }
+        &-2 { width: 42%; }
+        &-3 { width: 8%; }
+      }
+    }
+
+    &.ul--accounts {
+      .ul__li-column {
+        &-1 { width: 30%; }
+        &-2 { 
+          width: 60%;
+          @include breakpoint($medium) { width: 38%; }
+        }
+        &-3 { width: 10%; }
+        &-4 { 
+          width: 30%;
+          @include breakpoint($medium) { width: 17%; }
+          
+        }
+        &-5 { 
+          width: 10%;
+          @include breakpoint($medium) { width: 5%; }
+        }
+      }
+    }
+
+    &.ul--subscriptions {
+      .ul__li-column {
+        &-1 { 
+          width: 90%;
+          @include breakpoint($medium) { width: 25%; }
+        }
+        &-2 { width: 25%; }
+        &-3 { width: 14%; }
+        &-4 { width: 30%; }
+        &-5 { width: 6%; }
+      }
+    }
+
+    &.ul--subscription-requests {
+      .ul__li-column {
+        &-1 { 
+          width: 90%;
+          @include breakpoint($medium) { width: 25%; }
+        }
+        &-2 { width: 25%; }
+        &-3 { width: 12%; }
+        &-4 { width: 11%; }
+        &-5 { width: 13%; }
+        &-6 { width: 8%; }
+        &-7 { width: 6%; }
+      }
+    }
+
+    &.ul--subscription-request {
+      .ul__li-column {
+        &-1 { 
+          width: 65%;
+          @include breakpoint($small) { width: 30%; }
+        }
+        &-2 { width: 30%; }
+        &-3 { width: 20%; }
+        &-4 { 
+          width: 35%; 
+          @include breakpoint($small) { width: 20%; }
+        }
+      }
+    }
+  }
+
+//--------------------------------------------------
+// list - pricing table
+//--------------------------------------------------
+  &--table-pricing {
+    &-first {
+      width: 50%;
+
+      @include breakpoint($small) { width: rem-calc(210); }
+      @include breakpoint($medium) { width: 30%; }
+    }
+
+    .ul {
+      &__li {
+        font-size: rem-calc(14);
+        line-height: 1.2;
+        padding: rem-calc(0 12);
+        width: auto; height: rem-calc(60);
+
+        @include breakpoint($small) { padding: rem-calc(0 26); }
+
+        &:nth-child(2n+1) { background-color: $grey-xlight; }
+
+        &--heading { 
+          width: auto; height: rem-calc(40); 
+          
+          @include breakpoint($small) { height: rem-calc(50); }
+        }
+      
+        &--feature { 
+          font-size: rem-calc(14);
+          @include breakpoint($small) { font-size: rem-calc(16); }
+        }
+
+        &--title {
+          color: $white;
+          font-weight: $bold;
+          text-transform: uppercase;
+        }
+
+        &--price { font-size: rem-calc(24); }
+      }
+    }
+  }
+}

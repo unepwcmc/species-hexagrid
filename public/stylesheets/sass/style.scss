@@ -1,0 +1,24 @@
+.test {
+  //background-color: black;
+  //color: white;
+}
+
+// fonts
+@import './fonts/_font-fontello.scss';
+
+// // utilities 
+@import './utilities/rem-calc.scss';
+@import './utilities/variables.scss';
+@import './utilities/media-queries.scss';
+@import './utilities/flexbox.scss';
+@import './utilities/base.scss';
+@import './utilities/helpers.scss';
+
+// // components
+@import './components/box.scss';
+@import './components/icons.scss';
+@import './components/card.scss';
+@import './components/table.scss';
+@import './components/list.scss';
+
+@import './reports-pdf.scss';
