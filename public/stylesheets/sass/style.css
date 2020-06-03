@@ -1062,8 +1062,8 @@ strong, .bolder {
   @media screen and (min-width: 60.0625rem) {
     .card--dataset-stats .card__total-wrapper {
       font-size: 6.25rem;
-      width: 18.75rem;
-      height: 10rem; } }
+      width: 21.875rem;
+      height: 14.375rem; } }
 .card--dataset-stats .card__total {
   font-size: 3.75rem;
   font-weight: bold;
@@ -1071,11 +1071,19 @@ strong, .bolder {
   @media screen and (min-width: 60.0625rem) {
     .card--dataset-stats .card__total {
       font-size: 6.25rem; } }
+.card--dataset-stats .card__subtotal {
+  font-weight: bold;
+  line-height: 1; }
 .card--dataset-stats .card__type {
   font-size: 0.875rem; }
   @media screen and (min-width: 60.0625rem) {
     .card--dataset-stats .card__type {
       font-size: 1.25rem; } }
+.card--dataset-stats .card__subtype {
+  font-size: 0.625rem; }
+  @media screen and (min-width: 60.0625rem) {
+    .card--dataset-stats .card__subtype {
+      font-size: 1rem; } }
 .card--dataset-stats .card__smallprint {
   font-size: 0.875rem;
   margin-top: 1.125rem; }
@@ -2431,5 +2439,13 @@ a {
 
 .page-break-inside-avoid {
   page-break-inside: avoid; }
+
+ul.realms {
+  margin-top: 25px;
+  padding: 0;
+  list-style: none;
+  font-size: 14px; }
+  ul.realms li {
+    margin: 0 10px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -261,3 +261,11 @@ a { color: black; }
 .flex-h-between { justify-content: space-between; }
 
 .page-break-inside-avoid { page-break-inside: avoid; }
+
+ul.realms {
+  margin-top: 25px;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  li { margin: 0 10px; }
+}
