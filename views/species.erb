@@ -14,6 +14,16 @@
       <div class="card__total-wrapper flex flex-column flex-center margin-center">
         <span class="card__total text-redlist"><%= @total_count %></span>
         <span class="card__type">Species</span>
+        <div class="card__subtotal-wrapper flex flex-column flex-center margin-center">
+          <ul class="realms flex">
+            <% @realms_counts.each do |realm, count| %>
+                <li class="flex-column flex-center margin-center">
+                  <span class="card__subtotal"><%= count %></span>
+                  <span class="card__subtype"><%= realm.capitalize %></span>
+                </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
 

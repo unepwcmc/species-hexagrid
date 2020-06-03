@@ -8,6 +8,7 @@
         <th>Species name</th>
         <th>Common name</th>
         <th>IUCN Category</th>
+        <th>Realms</th>
         <th>Link to IUCN Red List</th>
       </tr>
     </thead>
@@ -18,6 +19,7 @@
           <td><%= row["binomial"] %></td>
           <td><%= row["common_name"] %></td>
           <td><%= row["category"] %></td>
+          <td><%= row['realms'] %>
           <td><a href='http://apiv3.iucnredlist.org/api/v3/website/<%= row["binomial"] %>'>Link</a></td>
         </tr>
       <% end %>

@@ -37,7 +37,7 @@ class S3
         @species = CSV.parse(event.payload.read).map {|a| Hash[ @keys.zip(a) ] } if is_records_event?(event)
       end
     end
-    @species
+    Species.merge_realms(@species)
   end
 
   private
