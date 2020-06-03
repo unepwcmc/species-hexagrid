@@ -40,6 +40,6 @@ module Species
         counts[realm] = list.count
       end
     end
-    counts.tap { |c| c['multiple'] = multiple }
+    counts.tap { |c| c['multiple_realms'] = multiple }
   end
 end

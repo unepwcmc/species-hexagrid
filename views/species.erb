@@ -19,7 +19,7 @@
             <% @realms_counts.each do |realm, count| %>
                 <li class="flex-column flex-center margin-center">
                   <span class="card__subtotal"><%= count %></span>
-                  <span class="card__subtype"><%= realm.capitalize %></span>
+                  <span class="card__subtype"><%= realm.capitalize.gsub('_',' ') %></span>
                 </li>
             <% end %>
           </ul>
