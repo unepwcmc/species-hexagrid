@@ -2447,5 +2447,13 @@ ul.realms {
   font-size: 14px; }
   ul.realms li {
     margin: 0 10px; }
+  ul.realms .realm-terrestrial {
+    color: green; }
+  ul.realms .realm-marine {
+    color: blue; }
+  ul.realms .realm-freshwater {
+    color: #0687ff; }
+  ul.realms .realm-multiple_realms {
+    color: brown; }
 
 /*# sourceMappingURL=style.css.map */
