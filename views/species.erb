@@ -33,6 +33,7 @@
           <%= erb :'partials/_card-list', locals: {total: @species[cat]&.count, id: cat, name: name} %>
         <% end %>
       </ul>
+      <a href="/<%= @id %>/download">Download</a>
       </div>
     </div>
     <div class="report__page-break"></div>

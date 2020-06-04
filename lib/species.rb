@@ -4,6 +4,14 @@ module Species
 
   #Order of keys matters
   KEYS = %w(ID_NO HEX_ID binomial category).concat(Realms::REALMS).concat(['common_name']).freeze
+  DOWNLOAD_KEYS = {
+    'HEX_ID' => 'Hex ID',
+    'binomial' => 'Species name',
+    'common_name' => 'Common name',
+    'category' => 'IUCN Category',
+    'realms' => 'Realms',
+    'link' => 'Link to IUCN RedList'
+  }.freeze
   IUCN_CATEGORIES = {
     'CR' => 'Critically Endangered',
     'EN' => 'Endangered',
