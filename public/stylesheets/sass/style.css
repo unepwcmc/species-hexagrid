@@ -2448,11 +2448,11 @@ ul.realms {
   ul.realms li {
     margin: 0 10px; }
   ul.realms .realm-terrestrial {
-    color: green; }
+    color: #D86E45; }
   ul.realms .realm-marine {
     color: blue; }
   ul.realms .realm-freshwater {
-    color: #0687ff; }
+    color: blue; }
   ul.realms .realm-multiple_realms {
     color: brown; }
 
