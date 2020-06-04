@@ -2450,10 +2450,10 @@ ul.realms {
   ul.realms .realm-terrestrial {
     color: #D86E45; }
   ul.realms .realm-marine {
-    color: blue; }
+    color: #0687ff; }
   ul.realms .realm-freshwater {
-    color: blue; }
+    color: #0687ff; }
   ul.realms .realm-multiple_realms {
-    color: brown; }
+    color: green; }
 
 /*# sourceMappingURL=style.css.map */
