@@ -1,6 +1,10 @@
 $font-size-small: rem-calc(18);
 $font-size-medium: rem-calc(20);
 
+.button-wrapper {
+  justify-content: right;
+}
+
 %button {
   background-color: transparent;
   border: none;
