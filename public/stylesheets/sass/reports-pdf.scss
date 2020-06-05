@@ -224,6 +224,9 @@ a { color: black; }
         @extend th;
         text-align: right;
       }
+      &.small { width: 10%; }
+      &.medium { width: 20%; }
+      &.large { width: 30%; }
     }
 
     tbody.break-word { word-wrap: break-word; }
@@ -271,7 +274,7 @@ ul.realms {
 
   .realm-terrestrial { color: #D86E45; }
   .realm-marine { color: rgb(6, 135, 255); }
-  .realm-freshwater { color: rgb(6, 135, 255); }
+  .realm-freshwater { color: rgb(157, 195, 230); }
   .realm-multiple_realms { color: green; }
 }
 

@@ -2429,6 +2429,12 @@ a {
     text-align: left; }
     .report__table th.right {
       text-align: right; }
+    .report__table th.small {
+      width: 10%; }
+    .report__table th.medium {
+      width: 20%; }
+    .report__table th.large {
+      width: 30%; }
   .report__table tbody.break-word {
     word-wrap: break-word; }
   .report__table tbody tr {
@@ -2489,7 +2495,7 @@ ul.realms {
   ul.realms .realm-marine {
     color: #0687ff; }
   ul.realms .realm-freshwater {
-    color: #0687ff; }
+    color: #9dc3e6; }
   ul.realms .realm-multiple_realms {
     color: green; }
 
