@@ -31,7 +31,7 @@ end
 
 get '/:id/download' do
   content_type 'application/csv'
-  attachment "myfilename.csv"
+  attachment "hexagrid_cell_#{params[:id]}.csv"
 
   file_index = FileManager.calculate_file_index(params[:id])
   filename = "splits_with_attributes/out_#{file_index}.csv.gz"
