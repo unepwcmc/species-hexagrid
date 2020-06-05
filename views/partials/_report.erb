@@ -16,11 +16,11 @@
     <tbody>
       <% grouped_species.each do |row| %>
         <tr>
-          <td><%= row["binomial"] %></td>
-          <td><%= row["common_name"] %></td>
-          <td><%= row["category"] %></td>
-          <td><%= row['realms'] %>
-          <td><a href='http://apiv3.iucnredlist.org/api/v3/website/<%= row["binomial"] %>'>Link</a></td>
+          <td><%= row.binomial %></td>
+          <td><%= row.common_name %></td>
+          <td><%= row.category %></td>
+          <td><%= row.realms %>
+          <td><a href='<%= row.redlist_link %>'>Link</a></td>
         </tr>
       <% end %>
     </tbody>

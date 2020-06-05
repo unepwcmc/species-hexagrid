@@ -1,6 +1,5 @@
 require_relative 'realms'
-module Species
-  extend self
+class Species
 
   #Order of keys matters
   KEYS = %w(ID_NO HEX_ID binomial category).concat(Realms::REALMS).concat(['common_name']).freeze
@@ -10,7 +9,7 @@ module Species
     'common_name' => 'Common name',
     'category' => 'IUCN Category',
     'realms' => 'Realms',
-    'link' => 'Link to IUCN RedList'
+    'redlist_link' => 'Link to IUCN RedList'
   }.freeze
   IUCN_CATEGORIES = {
     'CR' => 'Critically Endangered',
@@ -21,25 +20,40 @@ module Species
   }.freeze
   THREATENED = %w(CR EN VU).freeze
 
-  def categories_list
+  # Make KEYS plus :realms accessible instance attributes
+  attr_accessor *KEYS.map(&:downcase).map(&:to_sym) << :realms
+  def initialize(hash)
+    hash.each { |k, v| send("#{k.downcase}=", v) }
+  end
+
+  def redlist_link
+    "http://apiv3.iucnredlist.org/api/v3/website/#{binomial}"
+  end
+
+  def values_for_download
+    DOWNLOAD_KEYS.keys.map { |attr| send(attr.downcase) }
+  end
+
+  ### CLASS METHODS
+  def self.categories_list
     IUCN_CATEGORIES.keys.map { |c| "'#{c}'" }.join(',')
   end
 
-  def keys
+  def self.keys
     KEYS
   end
 
-  def merge_realms(species)
+  def self.merge_realms(species)
     species.each do |s|
-      s['realms'] = Realms.get_realms(s)
+      s.realms = Realms.get_realms(s)
     end
     species
   end
 
-  def count_by_realm(species)
+  def self.count_by_realm(species)
     counts = {}
     multiple = 0
-    _species = species.group_by { |s| s['realms'] }
+    _species = species.group_by { |s| s.realms }
 
     _species.each do |realm, list|
       if realm.include?('/')
@@ -49,5 +63,14 @@ module Species
       end
     end
     counts.tap { |c| c['multiple_realms'] = multiple }
+  end
+
+  def self.generate_csv(species)
+    CSV.generate do |csv|
+      header = DOWNLOAD_KEYS.values
+      csv << header
+
+      species.each { |s| csv << s.values_for_download } 
+    end
   end
 end

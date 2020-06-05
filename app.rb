@@ -22,7 +22,7 @@ get '/:id' do
     species = S3.new.get_data(filename, @id)
     @realms_counts = Species.count_by_realm(species)
     @total_count = species.count
-    @species = species.group_by { |hash| hash['category'] }
+    @species = species.group_by { |s| s.category }
     @area = 50
   end
 
@@ -37,14 +37,5 @@ get '/:id/download' do
   filename = "splits_with_attributes/out_#{file_index}.csv.gz"
   species = S3.new.get_data(filename, params[:id])
 
-  CSV.generate do |csv|
-    header = Species::DOWNLOAD_KEYS.values
-    csv << header
-
-    species.each do |s|
-      _values = s.slice(*Species::DOWNLOAD_KEYS.keys).values
-      _link = "http://apiv3.iucnredlist.org/api/v3/website/#{s['binomial']}"
-      csv << _values.push(_link)
-    end
-  end
+  Species.generate_csv(species)
 end
