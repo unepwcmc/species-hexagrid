@@ -279,7 +279,15 @@ ul.realms {
 }
 
 .proteus-logo { width: 10%; }
+
+.realms-text {
+  margin: 0;
+  align-self: flex-end;
+}
+
 .realms-reference {
+  position: relative;
+  top: 7%;
+  left: 13%;
   font-size: 20px;
-  margin-right: 95%;
 }
