@@ -130,10 +130,18 @@
           background-color: white;
           border: solid 1px $grey;
           margin-top: rem-calc(22);
-          width: 94%; height: rem-calc(110);
+          width: 94%; height: rem-calc(160);
 
           @include breakpoint($medium) { 
             font-size: rem-calc(100); 
+            width: rem-calc(400); height: rem-calc(230);
+          }
+        }
+
+        &__subtotal-wrapper {
+          width: 94%; height: rem-calc(110);
+          @include breakpoint($medium) {
+            font-size: rem-calc(100);
             width: rem-calc(400); height: rem-calc(230);
           }
         }
