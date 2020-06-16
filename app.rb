@@ -22,7 +22,7 @@ get '/:id' do
     species = S3.new.get_data(filename, @id)
     @realms_counts = Species.count_by_realm(species)
     @total_count = species.count
-    @species = species.group_by { |s| s.category }
+    @species = species.group_by(&:category)
     @area = 50
   end
 

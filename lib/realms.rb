@@ -9,7 +9,7 @@ module Realms
 
   def get_realms(s)
     realm_names.map do |r|
-       is_true?(s.send("biome_#{r}")) ? r.capitalize : nil
+      is_true?(s.send("biome_#{r}")) ? r.capitalize : nil
     end.compact.join(' / ')
   end
 

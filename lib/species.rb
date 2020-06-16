@@ -53,11 +53,11 @@ class Species
   def self.count_by_realm(species)
     counts = {}
     multiple = 0
-    _species = species.group_by { |s| s.realms }
+    _species = species.group_by(&:realms)
 
     _species.each do |realm, list|
       if realm.include?('/')
-        multiple +=  list.count
+        multiple += list.count
       else
         counts[realm] = list.count
       end
