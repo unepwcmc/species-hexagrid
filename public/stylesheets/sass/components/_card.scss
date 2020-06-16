@@ -130,11 +130,19 @@
           background-color: white;
           border: solid 1px $grey;
           margin-top: rem-calc(22);
-          width: 94%; height: rem-calc(110);
+          width: 94%; height: rem-calc(160);
 
           @include breakpoint($medium) { 
             font-size: rem-calc(100); 
-            width: rem-calc(300); height: rem-calc(160);
+            width: rem-calc(400); height: rem-calc(230);
+          }
+        }
+
+        &__subtotal-wrapper {
+          width: 94%; height: rem-calc(110);
+          @include breakpoint($medium) {
+            font-size: rem-calc(100);
+            width: rem-calc(400); height: rem-calc(230);
           }
         }
         
@@ -146,10 +154,21 @@
             @include breakpoint($medium) { font-size: rem-calc(100); }
           }
 
+          &__subtotal {
+            font-weight: bold;
+            line-height: 1;
+          }
+
           &__type {
             font-size: rem-calc(14);
 
             @include breakpoint($medium) { font-size: rem-calc(20); }
+          }
+
+          &__subtype {
+            font-size: rem-calc(10);
+
+            @include breakpoint($medium) { font-size: rem-calc(16); }
           }
 
         &__smallprint { 

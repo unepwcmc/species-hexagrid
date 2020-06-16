@@ -1,0 +1,53 @@
+$font-size-small: rem-calc(18);
+$font-size-medium: rem-calc(20);
+
+.button-wrapper {
+  justify-content: right;
+}
+
+%button {
+  background-color: transparent;
+  border: none;
+  border-radius: $radius-button;
+  color: $body-font-color;
+  cursor: pointer;
+  font-size: rem-calc(18);
+  line-height: 1;
+  padding: rem-calc(14 28);
+  text-align: center;
+  text-decoration: none;
+
+  display: inline-block;
+}
+
+.button {
+  &--small {
+    font-size: rem-calc(14);
+    padding: rem-calc(6 20);
+  }
+
+  &--medium {
+    font-size: rem-calc(17);
+    padding: rem-calc(7 22);
+  }
+
+  &--cta {
+    @extend %button;
+    background-color: $blue;
+    border: solid 1px $blue;
+    color: $white;
+    font-size: $font-size-small;
+    font-weight: $light;
+    padding: rem-calc(11 24);
+
+    @include breakpoint($small) {
+      font-size: $font-size-medium;
+      padding: rem-calc(14 35);
+    }
+
+    &:hover {
+      border-color: $grey-xdark;
+      background-color: $grey-xdark;
+    }
+  }
+}

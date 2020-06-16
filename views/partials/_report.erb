@@ -5,20 +5,22 @@
   <table class="report__table">
     <thead class="bg-red">
       <tr>
-        <th>Species name</th>
-        <th>Common name</th>
-        <th>IUCN Category</th>
-        <th>Link to IUCN Red List</th>
+        <th class='large'>Species name</th>
+        <th class='large'>Common name</th>
+        <th class='small'>IUCN Category</th>
+        <th class='medium'>Realms</th>
+        <th class='small'>Link to IUCN Red List</th>
       </tr>
     </thead>
 
     <tbody>
       <% grouped_species.each do |row| %>
         <tr>
-          <td><%= row["binomial"] %></td>
-          <td><%= row["common_name"] %></td>
-          <td><%= row["category"] %></td>
-          <td><a href='http://apiv3.iucnredlist.org/api/v3/website/<%= row["binomial"] %>'>Link</a></td>
+          <td><%= row.binomial %></td>
+          <td><%= row.common_name %></td>
+          <td><%= row.category %></td>
+          <td><%= row.realms %>
+          <td><a href='<%= row.redlist_link %>'>Link</a></td>
         </tr>
       <% end %>
     </tbody>

@@ -1058,12 +1058,20 @@ strong, .bolder {
   border: solid 1px #424242;
   margin-top: 1.375rem;
   width: 94%;
-  height: 6.875rem; }
+  height: 10rem; }
   @media screen and (min-width: 60.0625rem) {
     .card--dataset-stats .card__total-wrapper {
       font-size: 6.25rem;
-      width: 18.75rem;
-      height: 10rem; } }
+      width: 25rem;
+      height: 14.375rem; } }
+.card--dataset-stats .card__subtotal-wrapper {
+  width: 94%;
+  height: 6.875rem; }
+  @media screen and (min-width: 60.0625rem) {
+    .card--dataset-stats .card__subtotal-wrapper {
+      font-size: 6.25rem;
+      width: 25rem;
+      height: 14.375rem; } }
 .card--dataset-stats .card__total {
   font-size: 3.75rem;
   font-weight: bold;
@@ -1071,11 +1079,19 @@ strong, .bolder {
   @media screen and (min-width: 60.0625rem) {
     .card--dataset-stats .card__total {
       font-size: 6.25rem; } }
+.card--dataset-stats .card__subtotal {
+  font-weight: bold;
+  line-height: 1; }
 .card--dataset-stats .card__type {
   font-size: 0.875rem; }
   @media screen and (min-width: 60.0625rem) {
     .card--dataset-stats .card__type {
       font-size: 1.25rem; } }
+.card--dataset-stats .card__subtype {
+  font-size: 0.625rem; }
+  @media screen and (min-width: 60.0625rem) {
+    .card--dataset-stats .card__subtype {
+      font-size: 1rem; } }
 .card--dataset-stats .card__smallprint {
   font-size: 0.875rem;
   margin-top: 1.125rem; }
@@ -1568,6 +1584,43 @@ strong, .bolder {
     text-transform: uppercase; }
   .ul--table-pricing .ul__li--price {
     font-size: 1.5rem; }
+
+.button-wrapper {
+  justify-content: right; }
+
+.button--cta {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: #000000;
+  cursor: pointer;
+  font-size: 1.125rem;
+  line-height: 1;
+  padding: 0.875rem 1.75rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block; }
+
+.button--small {
+  font-size: 0.875rem;
+  padding: 0.375rem 1.25rem; }
+.button--medium {
+  font-size: 1.0625rem;
+  padding: 0.4375rem 1.375rem; }
+.button--cta {
+  background-color: #4673CE;
+  border: solid 1px #4673CE;
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 300;
+  padding: 0.6875rem 1.5rem; }
+  @media screen and (min-width: 45.0625rem) {
+    .button--cta {
+      font-size: 1.25rem;
+      padding: 0.875rem 2.1875rem; } }
+  .button--cta:hover {
+    border-color: #242424;
+    background-color: #242424; }
 
 .breakpoint-small-up {
   display: none; }
@@ -2384,6 +2437,12 @@ a {
     text-align: left; }
     .report__table th.right {
       text-align: right; }
+    .report__table th.small {
+      width: 10%; }
+    .report__table th.medium {
+      width: 20%; }
+    .report__table th.large {
+      width: 30%; }
   .report__table tbody.break-word {
     word-wrap: break-word; }
   .report__table tbody tr {
@@ -2431,5 +2490,34 @@ a {
 
 .page-break-inside-avoid {
   page-break-inside: avoid; }
+
+ul.realms {
+  margin-top: 25px;
+  padding: 0;
+  list-style: none;
+  font-size: 14px; }
+  ul.realms li {
+    margin: 0 10px; }
+  ul.realms .realm-terrestrial {
+    color: #D86E45; }
+  ul.realms .realm-marine {
+    color: #0687ff; }
+  ul.realms .realm-freshwater {
+    color: #9dc3e6; }
+  ul.realms .realm-multiple_realms {
+    color: green; }
+
+.proteus-logo {
+  width: 23.75rem; }
+
+.realms-text {
+  margin: 0;
+  align-self: flex-end; }
+
+.realms-reference {
+  position: relative;
+  top: 7%;
+  left: 13%;
+  font-size: 20px; }
 
 /*# sourceMappingURL=style.css.map */

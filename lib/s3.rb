@@ -34,10 +34,10 @@ class S3
         # :stats has statistical information about the data transferred such as:
         # => Aws::S3::Types::Stats bytes_scanned=xx, bytes_processed=xx, bytes_returned=xx
         # :end indicates the end of the event
-        @species = CSV.parse(event.payload.read).map {|a| Hash[ @keys.zip(a) ] } if is_records_event?(event)
+        @species = CSV.parse(event.payload.read).map { |a| Species.new(Hash[@keys.zip(a)]) } if is_records_event?(event)
       end
     end
-    @species
+    Species.merge_realms(@species)
   end
 
   private
