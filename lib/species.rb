@@ -26,8 +26,10 @@ class Species
     hash.each { |k, v| send("#{k.downcase}=", v) }
   end
 
+  # It redirects to the iucnredlist.org website and specifically
+  # to the species page related to the species binomial name specified.
   def redlist_link
-    "http://apiv3.iucnredlist.org/api/v3/website/#{binomial}"
+    "https://apiv3.iucnredlist.org/api/v3/website/#{binomial}"
   end
 
   def values_for_download
