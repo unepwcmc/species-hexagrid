@@ -18,13 +18,11 @@ get '/:id' do
   filename = "splits_with_attributes/out_#{file_index}.csv.gz"
   @rows = []
 
-  FileManager.with_file(filename) do
-    species = S3.new.get_data(filename, @id)
-    @realms_counts = Species.count_by_realm(species)
-    @total_count = species.count
-    @species = species.group_by(&:category)
-    @area = 50
-  end
+  species = S3.new.get_data(filename, @id)
+  @realms_counts = Species.count_by_realm(species)
+  @total_count = species.count
+  @species = species.group_by(&:category)
+  @area = 50
 
   erb :species
 end

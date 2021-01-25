@@ -1,15 +1,6 @@
 module FileManager
   extend self
 
-  def with_file(filename)
-    yield
-    destroy(filename)
-  end
-
-  def destroy(filename)
-    File.delete(filename) if File.exists?(filename)
-  end
-
   GROUP_VAL = 4.freeze
   def calculate_file_index(cell_id)
     cell_id = cell_id.to_i
