@@ -7,10 +7,6 @@ class S3
     @species = []
   end
 
-  def get_file(filename)
-    @s3.get_object(*params(filename))
-  end
-
   def get_data(filename, cell_id)
     params = {
       bucket: ENV['AWS_BUCKET'],
