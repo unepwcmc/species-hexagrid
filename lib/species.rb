@@ -45,6 +45,7 @@ class Species
     KEYS
   end
 
+  # Merge realms (biomes) information together for each species
   def self.merge_realms(species)
     species.each do |s|
       s.realms = Realms.get_realms(s)
@@ -52,6 +53,8 @@ class Species
     species
   end
 
+  # Count species by realm (biome).
+  # E.g. 28 Marine, 21 Terrestrial, etc.
   def self.count_by_realm(species)
     counts = {}
     multiple = 0
@@ -67,6 +70,7 @@ class Species
     counts.tap { |c| c['multiple_realms'] = multiple }
   end
 
+  # Generate CSV for download
   def self.generate_csv(species)
     CSV.generate do |csv|
       header = DOWNLOAD_KEYS.values

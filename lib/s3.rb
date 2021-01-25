@@ -8,6 +8,7 @@ class S3
   end
 
   def get_data(filename, cell_id)
+    # Params for connecting to the S3 bucket and querying the given file
     params = {
       bucket: ENV['AWS_BUCKET'],
       key: filename,
@@ -22,6 +23,9 @@ class S3
       }
     }.freeze
 
+    # CSV files on S3 are currently zipped in gzip format.
+    # The following streams the given file as allows to query the CSV using
+    # an SQL-like syntax even if the CSV file is gzipped.
     @s3.select_object_content(params) do |stream|
 
       # callback for every event that arrives
@@ -38,17 +42,14 @@ class S3
 
   private
 
+  # Get a subset of values (defined in Species.keys) for each species
   def base_query
-    "SELECT #{Species.keys.join(',')} FROM S3Object"
+    "SELECT #{@keys.join(',')} FROM S3Object"
   end
 
+  # Filter species by category as specified in Species.categories_list
   def query(cell_id)
     "#{base_query} t WHERE t.HEX_ID = '#{cell_id.to_i}' AND t.category IN (#{Species.categories_list})"
-  end
-
-  def params(filename)
-    target = "#{BASE_PATH}#{filename}"
-    [{ bucket: ENV['AWS_BUCKET'], key: filename }, {target: target}]
   end
 
   def is_records_event?(event)
